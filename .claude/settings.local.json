@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" log --oneline)",
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" show --stat)",
+      "Bash(gh auth status:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(gh api:*)",
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" add index.html)",
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" commit -m \"$(cat <<''EOF''\nCorrige les textes explicatifs du jeu\n\n- Précise qu''une seule étoile suffit pour débloquer le niveau suivant\n- Reformule le but du jeu (former des quintes, pas vider la réserve)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" checkout -b english-version)",
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" add -A)",
+      "Bash(git -C \"d:\\Création sites\\marble5-website\" commit -m \"$(cat <<''EOF''\nAjoute le support multilingue (FR, EN, ES, DE)\n\n- Crée les versions anglaise, espagnole et allemande du site\n- Ajoute un sélecteur de langue en haut à droite (FR | EN | ES | DE)\n- Implémente la détection automatique de la langue du navigateur\n- Mémorise le choix de langue dans localStorage\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marble5 - Alignez 5. Connectez tout. Maîtrisez la grille.</title>
+    <title>Marble5 - Align 5. Connect all. Master the grid.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
         }
         html { scroll-behavior: smooth; }
         body { font-family: 'Exo 2', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
-        
+
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; padding: 2rem; position: relative;
@@ -41,11 +41,11 @@
                         radial-gradient(ellipse at 50% 80%, rgba(251, 146, 60, 0.1) 0%, transparent 40%);
             z-index: 0;
         }
-        
+
         /* Billes flottantes avec vraies textures */
         .floating-marbles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
         .marble {
-            position: absolute; border-radius: 50%; 
+            position: absolute; border-radius: 50%;
             background-size: cover; background-position: center;
             animation: float-marble 15s ease-in-out infinite;
             box-shadow: 0 0 30px currentColor;
@@ -54,25 +54,25 @@
             content: ''; position: absolute; inset: 0; border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 50%);
         }
-        
-        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
-        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
-        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
-        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
-        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
-        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
-        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
-        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
-        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
-        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
-        
+
+        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('../marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
+        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('../marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
+        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('../marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
+        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('../marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
+        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('../marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
+        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('../marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
+        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('../marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
+        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('../marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
+        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('../marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
+        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('../marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
+
         @keyframes float-marble {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             25% { transform: translateY(-20px) rotate(10deg); }
             50% { transform: translateY(10px) rotate(-5deg); }
             75% { transform: translateY(-15px) rotate(5deg); }
         }
-        
+
         @media (max-width: 768px) {
             .marble { opacity: 0.5; }
             .marble-1, .marble-2, .marble-3, .marble-4, .marble-5 { left: -15px; }
@@ -253,19 +253,19 @@
         // Language detection and redirect
         (function() {
             const savedLang = localStorage.getItem('marble5-lang');
-            if (savedLang && savedLang !== 'fr') {
-                const langPaths = { 'en': 'en/index.html', 'es': 'es/index.html', 'de': 'de/index.html' };
+            if (savedLang && savedLang !== 'en') {
+                const langPaths = { 'fr': '../index.html', 'es': '../es/index.html', 'de': '../de/index.html' };
                 if (langPaths[savedLang]) window.location.href = langPaths[savedLang];
             } else if (!savedLang) {
                 const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
-                if (browserLang.startsWith('es')) {
-                    window.location.href = 'es/index.html';
+                if (browserLang.startsWith('fr')) {
+                    window.location.href = '../index.html';
+                } else if (browserLang.startsWith('es')) {
+                    window.location.href = '../es/index.html';
                 } else if (browserLang.startsWith('de')) {
-                    window.location.href = 'de/index.html';
-                } else if (!browserLang.startsWith('fr')) {
-                    window.location.href = 'en/index.html';
+                    window.location.href = '../de/index.html';
                 } else {
-                    localStorage.setItem('marble5-lang', 'fr');
+                    localStorage.setItem('marble5-lang', 'en');
                 }
             }
         })();
@@ -286,17 +286,17 @@
             <div class="marble marble-10"></div>
         </div>
         <div class="hero-content">
-            <div class="badge-proto">🚀 Prototype Pre-Alpha</div>
-            
+            <div class="badge-proto">🚀 Pre-Alpha Prototype</div>
+
             <h1>MARBLE5</h1>
-            <p class="tagline">Alignez 5 billes. Formez des quintes. <strong>Maîtrisez la grille.</strong></p>
+            <p class="tagline">Align 5 marbles. Form quints. <strong>Master the grid.</strong></p>
             <div class="cta-container">
                 <button class="cta-button primary disabled">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                    Bientôt disponible sur Android
+                    Coming soon on Android
                 </button>
-                <p class="coming-soon-text">Inscription pour être notifié à venir</p>
-                <a href="#concept" class="cta-button secondary">Découvrir le jeu ↓</a>
+                <p class="coming-soon-text">Sign up for notifications coming soon</p>
+                <a href="#concept" class="cta-button secondary">Discover the game ↓</a>
             </div>
         </div>
         <div class="scroll-hint">
@@ -305,120 +305,120 @@
     </section>
 
     <section class="concept-section" id="concept">
-        <h2 class="section-title">Le Concept</h2>
-        <p class="section-subtitle">Un puzzle simple à comprendre, difficile à maîtriser</p>
+        <h2 class="section-title">The Concept</h2>
+        <p class="section-subtitle">A puzzle that's easy to learn, hard to master</p>
         <div class="concept-grid">
             <div class="concept-card">
                 <span class="concept-icon">🎯</span>
-                <h3>Formez des Quintes</h3>
-                <p>Alignez 5 billes à l'horizontale, verticale ou diagonale. Chaque quinte vous rapporte des points et recharge votre réserve.</p>
+                <h3>Form Quints</h3>
+                <p>Align 5 marbles horizontally, vertically or diagonally. Each quint earns you points and refills your reserve.</p>
             </div>
             <div class="concept-card">
                 <span class="concept-icon plomb-icon"></span>
-                <h3>Gérez les Plombs</h3>
-                <p>Ces obstacles apparaissent régulièrement et bloquent vos alignements. Anticipez leur position pour survivre plus longtemps.</p>
+                <h3>Manage the Blockers</h3>
+                <p>These obstacles appear regularly and block your alignments. Anticipate their position to survive longer.</p>
             </div>
             <div class="concept-card">
                 <span class="concept-icon">⭐</span>
-                <h3>Décrochez 3 Étoiles</h3>
-                <p>30 niveaux progressifs vous attendent. Atteignez les paliers de score pour débloquer la suite et visez la perfection.</p>
+                <h3>Earn 3 Stars</h3>
+                <p>30 progressive levels await you. Reach the score thresholds to unlock more and aim for perfection.</p>
             </div>
         </div>
     </section>
 
     <section class="gallery-section">
-        <h2 class="section-title">Aperçu du Jeu</h2>
-        <p class="section-subtitle">3 univers, 30 niveaux, une difficulté croissante</p>
+        <h2 class="section-title">Game Preview</h2>
+        <p class="section-subtitle">3 worlds, 30 levels, increasing difficulty</p>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="screenshot_foret.png" alt="Niveaux Forêt">
-                <span class="gallery-label">🌲 Forêt · Niveaux 1-9</span>
+                <img src="../screenshot_foret.png" alt="Forest Levels">
+                <span class="gallery-label">🌲 Forest · Levels 1-9</span>
             </div>
             <div class="gallery-item">
-                <img src="screenshot_ruines.png" alt="Niveaux Ruines">
-                <span class="gallery-label">🏛️ Ruines · Niveaux 10-19</span>
+                <img src="../screenshot_ruines.png" alt="Ruins Levels">
+                <span class="gallery-label">🏛️ Ruins · Levels 10-19</span>
             </div>
             <div class="gallery-item">
-                <img src="screenshot_espace.png" alt="Niveaux Espace">
-                <span class="gallery-label">🌌 Espace · Niveaux 20-30</span>
+                <img src="../screenshot_espace.png" alt="Space Levels">
+                <span class="gallery-label">🌌 Space · Levels 20-30</span>
             </div>
         </div>
     </section>
 
-    <section class="rules-section" id="regles">
-        <h2 class="section-title">Les Règles</h2>
-        <p class="section-subtitle">Tout ce qu'il faut savoir pour jouer</p>
-        
+    <section class="rules-section" id="rules">
+        <h2 class="section-title">The Rules</h2>
+        <p class="section-subtitle">Everything you need to know to play</p>
+
         <div class="accordion-container">
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>🎮 Comment jouer</span>
+                    <span>🎮 How to Play</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Le but :</strong> Utiliser les billes de votre réserve pour former des quintes (alignements de 5 billes).</p>
-                    <p><strong>Poser une bille :</strong> Touchez une case adjacente à une bille déjà posée (horizontale, verticale ou diagonale).</p>
-                    <p><strong>La réserve :</strong> Vos billes disponibles apparaissent en bas de l'écran. Quand elle est vide, c'est perdu !</p>
+                    <p><strong>The goal:</strong> Use marbles from your reserve to form quints (alignments of 5 marbles).</p>
+                    <p><strong>Place a marble:</strong> Tap a cell adjacent to an already placed marble (horizontal, vertical or diagonal).</p>
+                    <p><strong>The reserve:</strong> Your available marbles appear at the bottom of the screen. When it's empty, you lose!</p>
                 </div>
             </div>
-            
+
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>✨ Quintes & Liaisons</span>
+                    <span>✨ Quints & Links</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Une quinte :</strong> 5 billes alignées (horizontale, verticale ou diagonale). Elles disparaissent et vous gagnez des points + des billes bonus.</p>
-                    <p><strong>Quintes multiples :</strong> Une seule bille bien placée peut former plusieurs quintes d'un coup. Plus vous en faites, plus vous gagnez de points !</p>
-                    <p><strong>Les liaisons :</strong> Chaque connexion entre deux billes ne peut servir qu'une seule fois pour former une quinte. C'est la clé de la stratégie !</p>
+                    <p><strong>A quint:</strong> 5 aligned marbles (horizontal, vertical or diagonal). They disappear and you earn points + bonus marbles.</p>
+                    <p><strong>Multiple quints:</strong> A single well-placed marble can form multiple quints at once. The more you make, the more points you earn!</p>
+                    <p><strong>Links:</strong> Each connection between two marbles can only be used once to form a quint. This is the key to strategy!</p>
                 </div>
             </div>
-            
+
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>💣 Les Plombs</span>
+                    <span>💣 The Blockers</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>C'est quoi :</strong> Des obstacles (billes rouges) qui apparaissent régulièrement sur la grille en fonction du niveau de difficulté.</p>
-                    <p><strong>Le danger :</strong> Ils bloquent vos alignements et prennent de la place.</p>
-                    <p><strong>Astuce :</strong> Vous pouvez sacrifier une bille pour contrôler où le prochain plomb apparaîtra !</p>
+                    <p><strong>What are they:</strong> Obstacles (red marbles) that appear regularly on the grid based on the difficulty level.</p>
+                    <p><strong>The danger:</strong> They block your alignments and take up space.</p>
+                    <p><strong>Tip:</strong> You can sacrifice a marble to control where the next blocker will appear!</p>
                 </div>
             </div>
-            
+
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>🏆 Scoring & Étoiles</span>
+                    <span>🏆 Scoring & Stars</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Points par tour :</strong></p>
+                    <p><strong>Points per turn:</strong></p>
                     <ul class="scoring-list">
-                        <li>1 quinte → 1 point, +1 bille</li>
-                        <li>2 quintes → 3 points, +2 billes</li>
-                        <li>3 quintes → 5 points, +3 billes</li>
-                        <li>4 quintes → 8 points, +4 billes</li>
-                        <li>5 quintes → 13 points, +5 billes</li>
+                        <li>1 quint → 1 point, +1 marble</li>
+                        <li>2 quints → 3 points, +2 marbles</li>
+                        <li>3 quints → 5 points, +3 marbles</li>
+                        <li>4 quints → 8 points, +4 marbles</li>
+                        <li>5 quints → 13 points, +5 marbles</li>
                     </ul>
-                    <p><strong>Les étoiles :</strong> Chaque niveau a 3 paliers de score. Il faut au moins une ★ pour débloquer le niveau suivant.</p>
+                    <p><strong>Stars:</strong> Each level has 3 score thresholds. You need at least one ★ to unlock the next level.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="modes-section">
-        <h2 class="section-title">Votre Style de Jeu</h2>
-        <p class="section-subtitle">Détente ou défi ? À vous de choisir.</p>
+        <h2 class="section-title">Your Play Style</h2>
+        <p class="section-subtitle">Relaxation or challenge? You choose.</p>
         <div class="modes-grid">
             <div class="mode-card zen">
                 <div class="mode-icon">🧘</div>
-                <h3>Mode Zen</h3>
-                <ul><li>Prise en main immédiate</li><li>Rythme posé, relaxant</li><li>Plaisir de voir la grille se construire</li><li>Parfait pour décompresser</li></ul>
+                <h3>Zen Mode</h3>
+                <ul><li>Easy to pick up</li><li>Relaxed, calm pace</li><li>Enjoy watching the grid build</li><li>Perfect for unwinding</li></ul>
             </div>
             <div class="mode-card challenge">
                 <div class="mode-icon">🔥</div>
-                <h3>Mode Challenge</h3>
-                <ul><li>Lecture avancée de la grille</li><li>Anticipation des plombs</li><li>Gestion fine de la réserve</li><li>Chasse aux ★★★ sur 30 niveaux</li></ul>
+                <h3>Challenge Mode</h3>
+                <ul><li>Advanced grid reading</li><li>Blocker anticipation</li><li>Careful reserve management</li><li>Hunt for ★★★ across 30 levels</li></ul>
             </div>
         </div>
     </section>
@@ -426,53 +426,53 @@
     <section class="notice-section">
         <div class="notice-box">
             <div class="notice-icon">⚠️</div>
-            <h3>Version Prototype</h3>
-            <p>Cette version pre-alpha sert à tester le gameplay et recueillir vos retours précieux.</p>
+            <h3>Prototype Version</h3>
+            <p>This pre-alpha version is for testing gameplay and gathering your valuable feedback.</p>
             <ul class="notice-list">
-                <li><span class="icon-yes">✓</span> Gameplay complet (30 niveaux)</li>
-                <li><span class="icon-yes">✓</span> Disponible sur Android</li>
-                <li><span class="icon-yes">✓</span> Gratuit</li>
-                <li><span class="icon-no">✗</span> Pas encore disponible sur iOS</li>
-                <li><span class="icon-no">✗</span> Visuels et sons non finaux</li>
+                <li><span class="icon-yes">✓</span> Complete gameplay (30 levels)</li>
+                <li><span class="icon-yes">✓</span> Available on Android</li>
+                <li><span class="icon-yes">✓</span> Free</li>
+                <li><span class="icon-no">✗</span> Not yet available on iOS</li>
+                <li><span class="icon-no">✗</span> Visuals and sounds not final</li>
             </ul>
         </div>
     </section>
 
     <section class="feedback-section">
-        <h2 class="section-title">Votre Avis Compte</h2>
+        <h2 class="section-title">Your Opinion Matters</h2>
         <div class="feedback-box">
-            <p>Vous avez testé Marble5 ?<br>Aidez-nous à améliorer le jeu en partageant votre expérience !</p>
-            <a href="#" class="cta-button primary">📝 Donner mon avis</a>
+            <p>Have you tried Marble5?<br>Help us improve the game by sharing your experience!</p>
+            <a href="#" class="cta-button primary">📝 Give Feedback</a>
         </div>
     </section>
 
     <section class="about-section" id="about">
         <h2 class="section-title">Rymo Studio</h2>
         <div class="about-box">
-            <p>Derrière ce nom, il y a <strong>Rudy et Manolo</strong> — deux amis qui partagent une passion pour les jeux.</p>
-            <p>Marble5 est né d'un souvenir d'enfance : un jeu de billes qu'on dessinait sur papier. Des années plus tard, on a décidé de lui donner vie.</p>
-            <p>C'est notre premier jeu, et on espère pas le dernier !</p>
+            <p>Behind this name are <strong>Rudy and Manolo</strong> — two friends who share a passion for games.</p>
+            <p>Marble5 was born from a childhood memory: a marble game we used to draw on paper. Years later, we decided to bring it to life.</p>
+            <p>This is our first game, and hopefully not our last!</p>
             <a href="mailto:contact@marble5.app" class="contact-link">📧 contact@marble5.app</a>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="logo.png" alt="Rymo Studio"></div>
+        <div class="footer-logo"><img src="../logo.png" alt="Rymo Studio"></div>
         <div class="footer-studio">RYMO STUDIO</div>
         <div class="footer-links">
-            <a href="#regles">Règles du jeu</a>
+            <a href="#rules">Game Rules</a>
             <a href="mailto:contact@marble5.app">Contact</a>
-            <a href="#" class="ios-notify-link">Me prévenir pour iOS</a>
+            <a href="#" class="ios-notify-link">Notify me for iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Rymo Studio — Marble5 est en développement</p>
+        <p class="footer-copy">© 2025 Rymo Studio — Marble5 is in development</p>
     </footer>
 
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <a href="#" class="lang-flag active" title="Français" onclick="localStorage.setItem('marble5-lang', 'fr'); return false;">FR</a>
-        <a href="en/index.html" class="lang-flag" title="English" onclick="localStorage.setItem('marble5-lang', 'en')">EN</a>
-        <a href="es/index.html" class="lang-flag" title="Español" onclick="localStorage.setItem('marble5-lang', 'es')">ES</a>
-        <a href="de/index.html" class="lang-flag" title="Deutsch" onclick="localStorage.setItem('marble5-lang', 'de')">DE</a>
+        <a href="../index.html" class="lang-flag" title="Français" onclick="localStorage.setItem('marble5-lang', 'fr')">FR</a>
+        <a href="#" class="lang-flag active" title="English" onclick="localStorage.setItem('marble5-lang', 'en'); return false;">EN</a>
+        <a href="../es/index.html" class="lang-flag" title="Español" onclick="localStorage.setItem('marble5-lang', 'es')">ES</a>
+        <a href="../de/index.html" class="lang-flag" title="Deutsch" onclick="localStorage.setItem('marble5-lang', 'de')">DE</a>
     </div>
 
     <script>

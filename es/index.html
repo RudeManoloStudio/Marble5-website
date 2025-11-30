@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marble5 - Alignez 5. Connectez tout. Maîtrisez la grille.</title>
+    <title>Marble5 - Alinea 5. Conecta todo. Domina la cuadrícula.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
         }
         html { scroll-behavior: smooth; }
         body { font-family: 'Exo 2', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
-        
+
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; padding: 2rem; position: relative;
@@ -41,11 +41,10 @@
                         radial-gradient(ellipse at 50% 80%, rgba(251, 146, 60, 0.1) 0%, transparent 40%);
             z-index: 0;
         }
-        
-        /* Billes flottantes avec vraies textures */
+
         .floating-marbles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
         .marble {
-            position: absolute; border-radius: 50%; 
+            position: absolute; border-radius: 50%;
             background-size: cover; background-position: center;
             animation: float-marble 15s ease-in-out infinite;
             box-shadow: 0 0 30px currentColor;
@@ -54,25 +53,25 @@
             content: ''; position: absolute; inset: 0; border-radius: 50%;
             background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 50%);
         }
-        
-        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
-        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
-        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
-        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
-        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
-        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
-        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
-        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
-        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
-        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
-        
+
+        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('../marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
+        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('../marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
+        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('../marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
+        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('../marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
+        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('../marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
+        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('../marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
+        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('../marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
+        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('../marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
+        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('../marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
+        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('../marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
+
         @keyframes float-marble {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             25% { transform: translateY(-20px) rotate(10deg); }
             50% { transform: translateY(10px) rotate(-5deg); }
             75% { transform: translateY(-15px) rotate(5deg); }
         }
-        
+
         @media (max-width: 768px) {
             .marble { opacity: 0.5; }
             .marble-1, .marble-2, .marble-3, .marble-4, .marble-5 { left: -15px; }
@@ -185,7 +184,6 @@
         .feedback-box { max-width: 500px; margin: 0 auto; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .feedback-box p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; }
 
-        /* Rules Section - Accordions */
         .rules-section { background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 32, 0.3) 50%, transparent 100%); }
         .accordion-container { max-width: 600px; margin: 0 auto; }
         .accordion { margin-bottom: 1rem; border-radius: 12px; overflow: hidden; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); }
@@ -208,7 +206,6 @@
         .scoring-list li { padding: 0.25rem 0; }
         .scoring-list li::before { content: '→ '; color: var(--accent-secondary); }
 
-        /* About Section */
         .about-section { text-align: center; }
         .about-box { max-width: 550px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .about-box p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1rem; line-height: 1.7; }
@@ -253,19 +250,19 @@
         // Language detection and redirect
         (function() {
             const savedLang = localStorage.getItem('marble5-lang');
-            if (savedLang && savedLang !== 'fr') {
-                const langPaths = { 'en': 'en/index.html', 'es': 'es/index.html', 'de': 'de/index.html' };
+            if (savedLang && savedLang !== 'es') {
+                const langPaths = { 'fr': '../index.html', 'en': '../en/index.html', 'de': '../de/index.html' };
                 if (langPaths[savedLang]) window.location.href = langPaths[savedLang];
             } else if (!savedLang) {
                 const browserLang = (navigator.language || navigator.userLanguage).toLowerCase();
-                if (browserLang.startsWith('es')) {
-                    window.location.href = 'es/index.html';
+                if (browserLang.startsWith('fr')) {
+                    window.location.href = '../index.html';
                 } else if (browserLang.startsWith('de')) {
-                    window.location.href = 'de/index.html';
-                } else if (!browserLang.startsWith('fr')) {
-                    window.location.href = 'en/index.html';
+                    window.location.href = '../de/index.html';
+                } else if (!browserLang.startsWith('es')) {
+                    window.location.href = '../en/index.html';
                 } else {
-                    localStorage.setItem('marble5-lang', 'fr');
+                    localStorage.setItem('marble5-lang', 'es');
                 }
             }
         })();
@@ -286,17 +283,17 @@
             <div class="marble marble-10"></div>
         </div>
         <div class="hero-content">
-            <div class="badge-proto">🚀 Prototype Pre-Alpha</div>
-            
+            <div class="badge-proto">🚀 Prototipo Pre-Alpha</div>
+
             <h1>MARBLE5</h1>
-            <p class="tagline">Alignez 5 billes. Formez des quintes. <strong>Maîtrisez la grille.</strong></p>
+            <p class="tagline">Alinea 5 canicas. Forma quinas. <strong>Domina la cuadrícula.</strong></p>
             <div class="cta-container">
                 <button class="cta-button primary disabled">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                    Bientôt disponible sur Android
+                    Próximamente en Android
                 </button>
-                <p class="coming-soon-text">Inscription pour être notifié à venir</p>
-                <a href="#concept" class="cta-button secondary">Découvrir le jeu ↓</a>
+                <p class="coming-soon-text">Inscripción para notificaciones próximamente</p>
+                <a href="#concept" class="cta-button secondary">Descubrir el juego ↓</a>
             </div>
         </div>
         <div class="scroll-hint">
@@ -305,120 +302,120 @@
     </section>
 
     <section class="concept-section" id="concept">
-        <h2 class="section-title">Le Concept</h2>
-        <p class="section-subtitle">Un puzzle simple à comprendre, difficile à maîtriser</p>
+        <h2 class="section-title">El Concepto</h2>
+        <p class="section-subtitle">Un puzzle fácil de entender, difícil de dominar</p>
         <div class="concept-grid">
             <div class="concept-card">
                 <span class="concept-icon">🎯</span>
-                <h3>Formez des Quintes</h3>
-                <p>Alignez 5 billes à l'horizontale, verticale ou diagonale. Chaque quinte vous rapporte des points et recharge votre réserve.</p>
+                <h3>Forma Quinas</h3>
+                <p>Alinea 5 canicas horizontal, vertical o diagonalmente. Cada quina te da puntos y recarga tu reserva.</p>
             </div>
             <div class="concept-card">
                 <span class="concept-icon plomb-icon"></span>
-                <h3>Gérez les Plombs</h3>
-                <p>Ces obstacles apparaissent régulièrement et bloquent vos alignements. Anticipez leur position pour survivre plus longtemps.</p>
+                <h3>Gestiona los Bloqueadores</h3>
+                <p>Estos obstáculos aparecen regularmente y bloquean tus alineaciones. Anticipa su posición para sobrevivir más tiempo.</p>
             </div>
             <div class="concept-card">
                 <span class="concept-icon">⭐</span>
-                <h3>Décrochez 3 Étoiles</h3>
-                <p>30 niveaux progressifs vous attendent. Atteignez les paliers de score pour débloquer la suite et visez la perfection.</p>
+                <h3>Consigue 3 Estrellas</h3>
+                <p>30 niveles progresivos te esperan. Alcanza los umbrales de puntuación para desbloquear más y apunta a la perfección.</p>
             </div>
         </div>
     </section>
 
     <section class="gallery-section">
-        <h2 class="section-title">Aperçu du Jeu</h2>
-        <p class="section-subtitle">3 univers, 30 niveaux, une difficulté croissante</p>
+        <h2 class="section-title">Vista Previa del Juego</h2>
+        <p class="section-subtitle">3 mundos, 30 niveles, dificultad creciente</p>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="screenshot_foret.png" alt="Niveaux Forêt">
-                <span class="gallery-label">🌲 Forêt · Niveaux 1-9</span>
+                <img src="../screenshot_foret.png" alt="Niveles Bosque">
+                <span class="gallery-label">🌲 Bosque · Niveles 1-9</span>
             </div>
             <div class="gallery-item">
-                <img src="screenshot_ruines.png" alt="Niveaux Ruines">
-                <span class="gallery-label">🏛️ Ruines · Niveaux 10-19</span>
+                <img src="../screenshot_ruines.png" alt="Niveles Ruinas">
+                <span class="gallery-label">🏛️ Ruinas · Niveles 10-19</span>
             </div>
             <div class="gallery-item">
-                <img src="screenshot_espace.png" alt="Niveaux Espace">
-                <span class="gallery-label">🌌 Espace · Niveaux 20-30</span>
+                <img src="../screenshot_espace.png" alt="Niveles Espacio">
+                <span class="gallery-label">🌌 Espacio · Niveles 20-30</span>
             </div>
         </div>
     </section>
 
-    <section class="rules-section" id="regles">
-        <h2 class="section-title">Les Règles</h2>
-        <p class="section-subtitle">Tout ce qu'il faut savoir pour jouer</p>
-        
+    <section class="rules-section" id="reglas">
+        <h2 class="section-title">Las Reglas</h2>
+        <p class="section-subtitle">Todo lo que necesitas saber para jugar</p>
+
         <div class="accordion-container">
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>🎮 Comment jouer</span>
+                    <span>🎮 Cómo Jugar</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Le but :</strong> Utiliser les billes de votre réserve pour former des quintes (alignements de 5 billes).</p>
-                    <p><strong>Poser une bille :</strong> Touchez une case adjacente à une bille déjà posée (horizontale, verticale ou diagonale).</p>
-                    <p><strong>La réserve :</strong> Vos billes disponibles apparaissent en bas de l'écran. Quand elle est vide, c'est perdu !</p>
+                    <p><strong>El objetivo:</strong> Usar las canicas de tu reserva para formar quinas (alineaciones de 5 canicas).</p>
+                    <p><strong>Colocar una canica:</strong> Toca una casilla adyacente a una canica ya colocada (horizontal, vertical o diagonal).</p>
+                    <p><strong>La reserva:</strong> Tus canicas disponibles aparecen en la parte inferior de la pantalla. ¡Cuando está vacía, pierdes!</p>
                 </div>
             </div>
-            
+
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>✨ Quintes & Liaisons</span>
+                    <span>✨ Quinas y Enlaces</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Une quinte :</strong> 5 billes alignées (horizontale, verticale ou diagonale). Elles disparaissent et vous gagnez des points + des billes bonus.</p>
-                    <p><strong>Quintes multiples :</strong> Une seule bille bien placée peut former plusieurs quintes d'un coup. Plus vous en faites, plus vous gagnez de points !</p>
-                    <p><strong>Les liaisons :</strong> Chaque connexion entre deux billes ne peut servir qu'une seule fois pour former une quinte. C'est la clé de la stratégie !</p>
+                    <p><strong>Una quina:</strong> 5 canicas alineadas (horizontal, vertical o diagonal). Desaparecen y ganas puntos + canicas bonus.</p>
+                    <p><strong>Quinas múltiples:</strong> Una sola canica bien colocada puede formar varias quinas a la vez. ¡Cuantas más hagas, más puntos ganas!</p>
+                    <p><strong>Los enlaces:</strong> Cada conexión entre dos canicas solo puede usarse una vez para formar una quina. ¡Esta es la clave de la estrategia!</p>
                 </div>
             </div>
-            
+
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>💣 Les Plombs</span>
+                    <span>💣 Los Bloqueadores</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>C'est quoi :</strong> Des obstacles (billes rouges) qui apparaissent régulièrement sur la grille en fonction du niveau de difficulté.</p>
-                    <p><strong>Le danger :</strong> Ils bloquent vos alignements et prennent de la place.</p>
-                    <p><strong>Astuce :</strong> Vous pouvez sacrifier une bille pour contrôler où le prochain plomb apparaîtra !</p>
+                    <p><strong>Qué son:</strong> Obstáculos (canicas rojas) que aparecen regularmente en la cuadrícula según el nivel de dificultad.</p>
+                    <p><strong>El peligro:</strong> Bloquean tus alineaciones y ocupan espacio.</p>
+                    <p><strong>Consejo:</strong> ¡Puedes sacrificar una canica para controlar dónde aparecerá el próximo bloqueador!</p>
                 </div>
             </div>
-            
+
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>🏆 Scoring & Étoiles</span>
+                    <span>🏆 Puntuación y Estrellas</span>
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Points par tour :</strong></p>
+                    <p><strong>Puntos por turno:</strong></p>
                     <ul class="scoring-list">
-                        <li>1 quinte → 1 point, +1 bille</li>
-                        <li>2 quintes → 3 points, +2 billes</li>
-                        <li>3 quintes → 5 points, +3 billes</li>
-                        <li>4 quintes → 8 points, +4 billes</li>
-                        <li>5 quintes → 13 points, +5 billes</li>
+                        <li>1 quina → 1 punto, +1 canica</li>
+                        <li>2 quinas → 3 puntos, +2 canicas</li>
+                        <li>3 quinas → 5 puntos, +3 canicas</li>
+                        <li>4 quinas → 8 puntos, +4 canicas</li>
+                        <li>5 quinas → 13 puntos, +5 canicas</li>
                     </ul>
-                    <p><strong>Les étoiles :</strong> Chaque niveau a 3 paliers de score. Il faut au moins une ★ pour débloquer le niveau suivant.</p>
+                    <p><strong>Estrellas:</strong> Cada nivel tiene 3 umbrales de puntuación. Necesitas al menos una ★ para desbloquear el siguiente nivel.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="modes-section">
-        <h2 class="section-title">Votre Style de Jeu</h2>
-        <p class="section-subtitle">Détente ou défi ? À vous de choisir.</p>
+        <h2 class="section-title">Tu Estilo de Juego</h2>
+        <p class="section-subtitle">¿Relajación o desafío? Tú eliges.</p>
         <div class="modes-grid">
             <div class="mode-card zen">
                 <div class="mode-icon">🧘</div>
-                <h3>Mode Zen</h3>
-                <ul><li>Prise en main immédiate</li><li>Rythme posé, relaxant</li><li>Plaisir de voir la grille se construire</li><li>Parfait pour décompresser</li></ul>
+                <h3>Modo Zen</h3>
+                <ul><li>Fácil de aprender</li><li>Ritmo relajado y tranquilo</li><li>Disfruta viendo la cuadrícula construirse</li><li>Perfecto para desconectar</li></ul>
             </div>
             <div class="mode-card challenge">
                 <div class="mode-icon">🔥</div>
-                <h3>Mode Challenge</h3>
-                <ul><li>Lecture avancée de la grille</li><li>Anticipation des plombs</li><li>Gestion fine de la réserve</li><li>Chasse aux ★★★ sur 30 niveaux</li></ul>
+                <h3>Modo Desafío</h3>
+                <ul><li>Lectura avanzada de la cuadrícula</li><li>Anticipación de bloqueadores</li><li>Gestión cuidadosa de la reserva</li><li>Caza las ★★★ en 30 niveles</li></ul>
             </div>
         </div>
     </section>
@@ -426,53 +423,53 @@
     <section class="notice-section">
         <div class="notice-box">
             <div class="notice-icon">⚠️</div>
-            <h3>Version Prototype</h3>
-            <p>Cette version pre-alpha sert à tester le gameplay et recueillir vos retours précieux.</p>
+            <h3>Versión Prototipo</h3>
+            <p>Esta versión pre-alpha es para probar el gameplay y recoger tus valiosos comentarios.</p>
             <ul class="notice-list">
-                <li><span class="icon-yes">✓</span> Gameplay complet (30 niveaux)</li>
-                <li><span class="icon-yes">✓</span> Disponible sur Android</li>
-                <li><span class="icon-yes">✓</span> Gratuit</li>
-                <li><span class="icon-no">✗</span> Pas encore disponible sur iOS</li>
-                <li><span class="icon-no">✗</span> Visuels et sons non finaux</li>
+                <li><span class="icon-yes">✓</span> Gameplay completo (30 niveles)</li>
+                <li><span class="icon-yes">✓</span> Disponible en Android</li>
+                <li><span class="icon-yes">✓</span> Gratis</li>
+                <li><span class="icon-no">✗</span> Aún no disponible en iOS</li>
+                <li><span class="icon-no">✗</span> Visuales y sonidos no finales</li>
             </ul>
         </div>
     </section>
 
     <section class="feedback-section">
-        <h2 class="section-title">Votre Avis Compte</h2>
+        <h2 class="section-title">Tu Opinión Importa</h2>
         <div class="feedback-box">
-            <p>Vous avez testé Marble5 ?<br>Aidez-nous à améliorer le jeu en partageant votre expérience !</p>
-            <a href="#" class="cta-button primary">📝 Donner mon avis</a>
+            <p>¿Has probado Marble5?<br>¡Ayúdanos a mejorar el juego compartiendo tu experiencia!</p>
+            <a href="#" class="cta-button primary">📝 Dar mi Opinión</a>
         </div>
     </section>
 
     <section class="about-section" id="about">
         <h2 class="section-title">Rymo Studio</h2>
         <div class="about-box">
-            <p>Derrière ce nom, il y a <strong>Rudy et Manolo</strong> — deux amis qui partagent une passion pour les jeux.</p>
-            <p>Marble5 est né d'un souvenir d'enfance : un jeu de billes qu'on dessinait sur papier. Des années plus tard, on a décidé de lui donner vie.</p>
-            <p>C'est notre premier jeu, et on espère pas le dernier !</p>
+            <p>Detrás de este nombre están <strong>Rudy y Manolo</strong> — dos amigos que comparten una pasión por los juegos.</p>
+            <p>Marble5 nació de un recuerdo de infancia: un juego de canicas que solíamos dibujar en papel. Años después, decidimos darle vida.</p>
+            <p>¡Este es nuestro primer juego, y esperamos que no sea el último!</p>
             <a href="mailto:contact@marble5.app" class="contact-link">📧 contact@marble5.app</a>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="logo.png" alt="Rymo Studio"></div>
+        <div class="footer-logo"><img src="../logo.png" alt="Rymo Studio"></div>
         <div class="footer-studio">RYMO STUDIO</div>
         <div class="footer-links">
-            <a href="#regles">Règles du jeu</a>
-            <a href="mailto:contact@marble5.app">Contact</a>
-            <a href="#" class="ios-notify-link">Me prévenir pour iOS</a>
+            <a href="#reglas">Reglas del juego</a>
+            <a href="mailto:contact@marble5.app">Contacto</a>
+            <a href="#" class="ios-notify-link">Avisarme para iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Rymo Studio — Marble5 est en développement</p>
+        <p class="footer-copy">© 2025 Rymo Studio — Marble5 está en desarrollo</p>
     </footer>
 
     <!-- Language Switcher -->
     <div class="lang-switcher">
-        <a href="#" class="lang-flag active" title="Français" onclick="localStorage.setItem('marble5-lang', 'fr'); return false;">FR</a>
-        <a href="en/index.html" class="lang-flag" title="English" onclick="localStorage.setItem('marble5-lang', 'en')">EN</a>
-        <a href="es/index.html" class="lang-flag" title="Español" onclick="localStorage.setItem('marble5-lang', 'es')">ES</a>
-        <a href="de/index.html" class="lang-flag" title="Deutsch" onclick="localStorage.setItem('marble5-lang', 'de')">DE</a>
+        <a href="../index.html" class="lang-flag" title="Français" onclick="localStorage.setItem('marble5-lang', 'fr')">FR</a>
+        <a href="../en/index.html" class="lang-flag" title="English" onclick="localStorage.setItem('marble5-lang', 'en')">EN</a>
+        <a href="#" class="lang-flag active" title="Español" onclick="localStorage.setItem('marble5-lang', 'es'); return false;">ES</a>
+        <a href="../de/index.html" class="lang-flag" title="Deutsch" onclick="localStorage.setItem('marble5-lang', 'de')">DE</a>
     </div>
 
     <script>
