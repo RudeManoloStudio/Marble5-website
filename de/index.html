@@ -114,7 +114,7 @@
         .cta-button.primary.disabled:hover { transform: none; }
         .cta-button.secondary { background: transparent; color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.2); }
         .cta-button.secondary:hover { color: var(--text-primary); border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
-        .coming-soon-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+        .coming-soon-text { font-size: 0.85rem; color: var(--marble-orange); margin-top: 0.5rem; }
         .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s ease-in-out infinite; color: var(--text-muted); }
         @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
 
@@ -184,6 +184,7 @@
         .feedback-section { text-align: center; background: linear-gradient(180deg, transparent 0%, rgba(72, 149, 239, 0.08) 50%, transparent 100%); }
         .feedback-box { max-width: 500px; margin: 0 auto; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .feedback-box p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .feedback-box .coming-soon-text { color: var(--marble-orange); margin-bottom: 0; font-size: 0.85rem; }
 
         .rules-section { background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 32, 0.3) 50%, transparent 100%); }
         .accordion-container { max-width: 600px; margin: 0 auto; }
@@ -284,7 +285,7 @@
             <div class="marble marble-10"></div>
         </div>
         <div class="hero-content">
-            <div class="badge-proto">🚀 Pre-Alpha Prototyp</div>
+            <div class="badge-proto">🚀 Geschlossene Beta</div>
 
             <h1>MARBLE5</h1>
             <p class="tagline">Reihe 5 Murmeln auf. Bilde Fünfer. <strong>Meistere das Raster.</strong></p>
@@ -356,7 +357,7 @@
                 <div class="accordion-content">
                     <p><strong>Das Ziel:</strong> Benutze Murmeln aus deiner Reserve, um Fünfer zu bilden (Reihen von 5 Murmeln).</p>
                     <p><strong>Murmel platzieren:</strong> Tippe auf ein Feld neben einer bereits platzierten Murmel (horizontal, vertikal oder diagonal).</p>
-                    <p><strong>Die Reserve:</strong> Deine verfügbaren Murmeln erscheinen am unteren Bildschirmrand. Wenn sie leer ist, verlierst du!</p>
+                    <p><strong>Die Reserve:</strong> Deine verfügbaren Murmeln erscheinen am unteren Bildschirmrand. Wenn sie leer ist, ist das Level beendet!</p>
                 </div>
             </div>
 
@@ -366,9 +367,9 @@
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Ein Fünfer:</strong> 5 aufgereihte Murmeln (horizontal, vertikal oder diagonal). Sie verschwinden und du bekommst Punkte + Bonus-Murmeln.</p>
+                    <p><strong>Ein Fünfer:</strong> 5 aufgereihte Murmeln (horizontal, vertikal oder diagonal). Der Fünfer wird bestätigt und du bekommst Punkte + Bonus-Murmeln.</p>
                     <p><strong>Mehrfache Fünfer:</strong> Eine gut platzierte Murmel kann mehrere Fünfer auf einmal bilden. Je mehr du machst, desto mehr Punkte bekommst du!</p>
-                    <p><strong>Verbindungen:</strong> Jede Verbindung zwischen zwei Murmeln kann nur einmal für einen Fünfer verwendet werden. Das ist der Schlüssel zur Strategie!</p>
+                    <p><strong>Verbindungen:</strong> Jede Verbindung zwischen zwei Murmeln kann nur einmal für einen Fünfer verwendet werden.</p>
                 </div>
             </div>
 
@@ -424,8 +425,8 @@
     <section class="notice-section">
         <div class="notice-box">
             <div class="notice-icon">⚠️</div>
-            <h3>Prototyp-Version</h3>
-            <p>Diese Pre-Alpha-Version dient zum Testen des Gameplays und zum Sammeln deines wertvollen Feedbacks.</p>
+            <h3>Geschlossene Beta</h3>
+            <p>Diese Version dient zum Testen des Gameplays und zum Sammeln deines wertvollen Feedbacks vor der offiziellen Veröffentlichung.</p>
             <ul class="notice-list">
                 <li><span class="icon-yes">✓</span> Vollständiges Gameplay (30 Level)</li>
                 <li><span class="icon-yes">✓</span> Verfügbar auf Android</li>
@@ -440,29 +441,36 @@
         <h2 class="section-title">Deine Meinung zählt</h2>
         <div class="feedback-box">
             <p>Hast du Marble5 ausprobiert?<br>Hilf uns, das Spiel zu verbessern, indem du deine Erfahrung teilst!</p>
-            <a href="#" class="cta-button primary">📝 Feedback geben</a>
+            <button class="cta-button primary disabled">📝 Feedback geben</button>
+            <p class="coming-soon-text">Bald verfügbar</p>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <h2 class="section-title">Rymo Studio</h2>
-        <div class="about-box">
-            <p>Hinter diesem Namen stehen <strong>Rudy und Manolo</strong> — zwei Freunde, die eine Leidenschaft für Spiele teilen.</p>
-            <p>Marble5 entstand aus einer Kindheitserinnerung: ein Murmelspiel, das wir früher auf Papier gezeichnet haben. Jahre später haben wir beschlossen, es zum Leben zu erwecken.</p>
-            <p>Das ist unser erstes Spiel, und hoffentlich nicht unser letztes!</p>
-            <a href="mailto:contact@marble5.app" class="contact-link">📧 contact@marble5.app</a>
+        <div class="accordion-container">
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span>🎮 Nom studio à définir</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Hinter diesem Namen stehen <strong>Rudy und Manolo</strong> — zwei Freunde, die eine Leidenschaft für Spiele teilen.</p>
+                    <p>Marble5 entstand aus einer Kindheitserinnerung: ein Murmelspiel, das wir früher auf Papier gezeichnet haben. Jahre später haben wir beschlossen, es zum Leben zu erwecken.</p>
+                    <p><span class="contact-link">📧 in Kürze</span></p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="../logo.png" alt="Rymo Studio"></div>
-        <div class="footer-studio">RYMO STUDIO</div>
+        <div class="footer-logo"><img src="../logo.png" alt="Nom studio à définir"></div>
+        <div class="footer-studio">NOM STUDIO À DÉFINIR</div>
         <div class="footer-links">
             <a href="#regeln">Spielregeln</a>
-            <a href="mailto:contact@marble5.app">Kontakt</a>
+            <span>Kontakt (in Kürze)</span>
             <a href="#" class="ios-notify-link">Benachrichtigung für iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Rymo Studio — Marble5 ist in Entwicklung</p>
+        <p class="footer-copy">© 2025 Nom studio à définir — Marble5 ist in Entwicklung</p>
     </footer>
 
     <!-- Language Switcher -->

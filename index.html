@@ -115,7 +115,7 @@
         .cta-button.primary.disabled:hover { transform: none; }
         .cta-button.secondary { background: transparent; color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.2); }
         .cta-button.secondary:hover { color: var(--text-primary); border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
-        .coming-soon-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+        .coming-soon-text { font-size: 0.85rem; color: var(--marble-orange); margin-top: 0.5rem; }
         .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s ease-in-out infinite; color: var(--text-muted); }
         @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
 
@@ -185,6 +185,7 @@
         .feedback-section { text-align: center; background: linear-gradient(180deg, transparent 0%, rgba(72, 149, 239, 0.08) 50%, transparent 100%); }
         .feedback-box { max-width: 500px; margin: 0 auto; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .feedback-box p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .feedback-box .coming-soon-text { color: var(--marble-orange); margin-bottom: 0; font-size: 0.85rem; }
 
         /* Rules Section - Accordions */
         .rules-section { background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 32, 0.3) 50%, transparent 100%); }
@@ -287,7 +288,7 @@
             <div class="marble marble-10"></div>
         </div>
         <div class="hero-content">
-            <div class="badge-proto">🚀 Prototype Pre-Alpha</div>
+            <div class="badge-proto">🚀 Bêta fermée</div>
             
             <h1>MARBLE5</h1>
             <p class="tagline">Alignez 5 billes. Formez des quintes. <strong>Maîtrisez la grille.</strong></p>
@@ -359,7 +360,7 @@
                 <div class="accordion-content">
                     <p><strong>Le but :</strong> Utiliser les billes de votre réserve pour former des quintes (alignements de 5 billes).</p>
                     <p><strong>Poser une bille :</strong> Touchez une case adjacente à une bille déjà posée (horizontale, verticale ou diagonale).</p>
-                    <p><strong>La réserve :</strong> Vos billes disponibles apparaissent en bas de l'écran. Quand elle est vide, c'est perdu !</p>
+                    <p><strong>La réserve :</strong> Vos billes disponibles apparaissent en bas de l'écran. Quand elle est vide, le niveau est terminé !</p>
                 </div>
             </div>
             
@@ -369,9 +370,9 @@
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Une quinte :</strong> 5 billes alignées (horizontale, verticale ou diagonale). Elles disparaissent et vous gagnez des points + des billes bonus.</p>
+                    <p><strong>Une quinte :</strong> 5 billes alignées (horizontale, verticale ou diagonale). La quinte est validée et vous gagnez des points + des billes bonus.</p>
                     <p><strong>Quintes multiples :</strong> Une seule bille bien placée peut former plusieurs quintes d'un coup. Plus vous en faites, plus vous gagnez de points !</p>
-                    <p><strong>Les liaisons :</strong> Chaque connexion entre deux billes ne peut servir qu'une seule fois pour former une quinte. C'est la clé de la stratégie !</p>
+                    <p><strong>Les liaisons :</strong> Chaque connexion entre deux billes ne peut servir qu'une seule fois pour former une quinte.</p>
                 </div>
             </div>
             
@@ -427,8 +428,8 @@
     <section class="notice-section">
         <div class="notice-box">
             <div class="notice-icon">⚠️</div>
-            <h3>Version Prototype</h3>
-            <p>Cette version pre-alpha sert à tester le gameplay et recueillir vos retours précieux.</p>
+            <h3>Bêta fermée</h3>
+            <p>Cette version sert à tester le gameplay et recueillir vos retours précieux avant la sortie officielle.</p>
             <ul class="notice-list">
                 <li><span class="icon-yes">✓</span> Gameplay complet (30 niveaux)</li>
                 <li><span class="icon-yes">✓</span> Disponible sur Android</li>
@@ -443,29 +444,36 @@
         <h2 class="section-title">Votre Avis Compte</h2>
         <div class="feedback-box">
             <p>Vous avez testé Marble5 ?<br>Aidez-nous à améliorer le jeu en partageant votre expérience !</p>
-            <a href="#" class="cta-button primary">📝 Donner mon avis</a>
+            <button class="cta-button primary disabled">📝 Donner mon avis</button>
+            <p class="coming-soon-text">Bientôt disponible</p>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <h2 class="section-title">Rymo Studio</h2>
-        <div class="about-box">
-            <p>Derrière ce nom, il y a <strong>Rudy et Manolo</strong> — deux amis qui partagent une passion pour les jeux.</p>
-            <p>Marble5 est né d'un souvenir d'enfance : un jeu de billes qu'on dessinait sur papier. Des années plus tard, on a décidé de lui donner vie.</p>
-            <p>C'est notre premier jeu, et on espère pas le dernier !</p>
-            <a href="mailto:contact@marble5.app" class="contact-link">📧 contact@marble5.app</a>
+        <div class="accordion-container">
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span>🎮 Nom studio à définir</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Derrière ce nom, il y a <strong>Rudy et Manolo</strong> — deux amis qui partagent une passion pour les jeux.</p>
+                    <p>Marble5 est né d'un souvenir d'enfance : un jeu de billes qu'on dessinait sur papier. Des années plus tard, on a décidé de lui donner vie.</p>
+                    <p><span class="contact-link">📧 en cours</span></p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="logo.png" alt="Rymo Studio"></div>
-        <div class="footer-studio">RYMO STUDIO</div>
+        <div class="footer-logo"><img src="logo.png" alt="Nom studio à définir"></div>
+        <div class="footer-studio">NOM STUDIO À DÉFINIR</div>
         <div class="footer-links">
             <a href="#regles">Règles du jeu</a>
-            <a href="mailto:contact@marble5.app">Contact</a>
+            <span>Contact (en cours)</span>
             <a href="#" class="ios-notify-link">Me prévenir pour iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Rymo Studio — Marble5 est en développement</p>
+        <p class="footer-copy">© 2025 Nom studio à définir — Marble5 est en développement</p>
     </footer>
 
     <!-- Language Switcher -->

@@ -114,7 +114,7 @@
         .cta-button.primary.disabled:hover { transform: none; }
         .cta-button.secondary { background: transparent; color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.2); }
         .cta-button.secondary:hover { color: var(--text-primary); border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
-        .coming-soon-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+        .coming-soon-text { font-size: 0.85rem; color: var(--marble-orange); margin-top: 0.5rem; }
         .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s ease-in-out infinite; color: var(--text-muted); }
         @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
 
@@ -184,6 +184,7 @@
         .feedback-section { text-align: center; background: linear-gradient(180deg, transparent 0%, rgba(72, 149, 239, 0.08) 50%, transparent 100%); }
         .feedback-box { max-width: 500px; margin: 0 auto; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .feedback-box p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .feedback-box .coming-soon-text { color: var(--marble-orange); margin-bottom: 0; font-size: 0.85rem; }
 
         .rules-section { background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 32, 0.3) 50%, transparent 100%); }
         .accordion-container { max-width: 600px; margin: 0 auto; }
@@ -284,7 +285,7 @@
             <div class="marble marble-10"></div>
         </div>
         <div class="hero-content">
-            <div class="badge-proto">🚀 Prototipo Pre-Alpha</div>
+            <div class="badge-proto">🚀 Beta cerrada</div>
 
             <h1>MARBLE5</h1>
             <p class="tagline">Alinea 5 canicas. Forma quinas. <strong>Domina la cuadrícula.</strong></p>
@@ -356,7 +357,7 @@
                 <div class="accordion-content">
                     <p><strong>El objetivo:</strong> Usar las canicas de tu reserva para formar quinas (alineaciones de 5 canicas).</p>
                     <p><strong>Colocar una canica:</strong> Toca una casilla adyacente a una canica ya colocada (horizontal, vertical o diagonal).</p>
-                    <p><strong>La reserva:</strong> Tus canicas disponibles aparecen en la parte inferior de la pantalla. ¡Cuando está vacía, pierdes!</p>
+                    <p><strong>La reserva:</strong> Tus canicas disponibles aparecen en la parte inferior de la pantalla. ¡Cuando está vacía, el nivel termina!</p>
                 </div>
             </div>
 
@@ -366,9 +367,9 @@
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>Una quina:</strong> 5 canicas alineadas (horizontal, vertical o diagonal). Desaparecen y ganas puntos + canicas bonus.</p>
+                    <p><strong>Una quina:</strong> 5 canicas alineadas (horizontal, vertical o diagonal). La quina se valida y ganas puntos + canicas bonus.</p>
                     <p><strong>Quinas múltiples:</strong> Una sola canica bien colocada puede formar varias quinas a la vez. ¡Cuantas más hagas, más puntos ganas!</p>
-                    <p><strong>Los enlaces:</strong> Cada conexión entre dos canicas solo puede usarse una vez para formar una quina. ¡Esta es la clave de la estrategia!</p>
+                    <p><strong>Los enlaces:</strong> Cada conexión entre dos canicas solo puede usarse una vez para formar una quina.</p>
                 </div>
             </div>
 
@@ -424,8 +425,8 @@
     <section class="notice-section">
         <div class="notice-box">
             <div class="notice-icon">⚠️</div>
-            <h3>Versión Prototipo</h3>
-            <p>Esta versión pre-alpha es para probar el gameplay y recoger tus valiosos comentarios.</p>
+            <h3>Beta cerrada</h3>
+            <p>Esta versión es para probar el gameplay y recoger tus valiosos comentarios antes del lanzamiento oficial.</p>
             <ul class="notice-list">
                 <li><span class="icon-yes">✓</span> Gameplay completo (30 niveles)</li>
                 <li><span class="icon-yes">✓</span> Disponible en Android</li>
@@ -440,29 +441,36 @@
         <h2 class="section-title">Tu Opinión Importa</h2>
         <div class="feedback-box">
             <p>¿Has probado Marble5?<br>¡Ayúdanos a mejorar el juego compartiendo tu experiencia!</p>
-            <a href="#" class="cta-button primary">📝 Dar mi Opinión</a>
+            <button class="cta-button primary disabled">📝 Dar mi Opinión</button>
+            <p class="coming-soon-text">Próximamente</p>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <h2 class="section-title">Rymo Studio</h2>
-        <div class="about-box">
-            <p>Detrás de este nombre están <strong>Rudy y Manolo</strong> — dos amigos que comparten una pasión por los juegos.</p>
-            <p>Marble5 nació de un recuerdo de infancia: un juego de canicas que solíamos dibujar en papel. Años después, decidimos darle vida.</p>
-            <p>¡Este es nuestro primer juego, y esperamos que no sea el último!</p>
-            <a href="mailto:contact@marble5.app" class="contact-link">📧 contact@marble5.app</a>
+        <div class="accordion-container">
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span>🎮 Nom studio à définir</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Detrás de este nombre están <strong>Rudy y Manolo</strong> — dos amigos que comparten una pasión por los juegos.</p>
+                    <p>Marble5 nació de un recuerdo de infancia: un juego de canicas que solíamos dibujar en papel. Años después, decidimos darle vida.</p>
+                    <p><span class="contact-link">📧 próximamente</span></p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="../logo.png" alt="Rymo Studio"></div>
-        <div class="footer-studio">RYMO STUDIO</div>
+        <div class="footer-logo"><img src="../logo.png" alt="Nom studio à définir"></div>
+        <div class="footer-studio">NOM STUDIO À DÉFINIR</div>
         <div class="footer-links">
             <a href="#reglas">Reglas del juego</a>
-            <a href="mailto:contact@marble5.app">Contacto</a>
+            <span>Contacto (próximamente)</span>
             <a href="#" class="ios-notify-link">Avisarme para iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Rymo Studio — Marble5 está en desarrollo</p>
+        <p class="footer-copy">© 2025 Nom studio à définir — Marble5 está en desarrollo</p>
     </footer>
 
     <!-- Language Switcher -->

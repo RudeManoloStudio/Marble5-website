@@ -115,7 +115,7 @@
         .cta-button.primary.disabled:hover { transform: none; }
         .cta-button.secondary { background: transparent; color: var(--text-secondary); border: 1px solid rgba(255,255,255,0.2); }
         .cta-button.secondary:hover { color: var(--text-primary); border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
-        .coming-soon-text { font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; }
+        .coming-soon-text { font-size: 0.85rem; color: var(--marble-orange); margin-top: 0.5rem; }
         .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s ease-in-out infinite; color: var(--text-muted); }
         @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
 
@@ -185,6 +185,7 @@
         .feedback-section { text-align: center; background: linear-gradient(180deg, transparent 0%, rgba(72, 149, 239, 0.08) 50%, transparent 100%); }
         .feedback-box { max-width: 500px; margin: 0 auto; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .feedback-box p { color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.05rem; }
+        .feedback-box .coming-soon-text { color: var(--marble-orange); margin-bottom: 0; font-size: 0.85rem; }
 
         /* Rules Section - Accordions */
         .rules-section { background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 32, 0.3) 50%, transparent 100%); }
@@ -287,7 +288,7 @@
             <div class="marble marble-10"></div>
         </div>
         <div class="hero-content">
-            <div class="badge-proto">🚀 Pre-Alpha Prototype</div>
+            <div class="badge-proto">🚀 Closed Beta</div>
 
             <h1>MARBLE5</h1>
             <p class="tagline">Align 5 marbles. Form quints. <strong>Master the grid.</strong></p>
@@ -359,7 +360,7 @@
                 <div class="accordion-content">
                     <p><strong>The goal:</strong> Use marbles from your reserve to form quints (alignments of 5 marbles).</p>
                     <p><strong>Place a marble:</strong> Tap a cell adjacent to an already placed marble (horizontal, vertical or diagonal).</p>
-                    <p><strong>The reserve:</strong> Your available marbles appear at the bottom of the screen. When it's empty, you lose!</p>
+                    <p><strong>The reserve:</strong> Your available marbles appear at the bottom of the screen. When it's empty, the level is over!</p>
                 </div>
             </div>
 
@@ -369,9 +370,9 @@
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content">
-                    <p><strong>A quint:</strong> 5 aligned marbles (horizontal, vertical or diagonal). They disappear and you earn points + bonus marbles.</p>
+                    <p><strong>A quint:</strong> 5 aligned marbles (horizontal, vertical or diagonal). The quint is validated and you earn points + bonus marbles.</p>
                     <p><strong>Multiple quints:</strong> A single well-placed marble can form multiple quints at once. The more you make, the more points you earn!</p>
-                    <p><strong>Links:</strong> Each connection between two marbles can only be used once to form a quint. This is the key to strategy!</p>
+                    <p><strong>Links:</strong> Each connection between two marbles can only be used once to form a quint.</p>
                 </div>
             </div>
 
@@ -427,8 +428,8 @@
     <section class="notice-section">
         <div class="notice-box">
             <div class="notice-icon">⚠️</div>
-            <h3>Prototype Version</h3>
-            <p>This pre-alpha version is for testing gameplay and gathering your valuable feedback.</p>
+            <h3>Closed Beta</h3>
+            <p>This version is for testing gameplay and gathering your valuable feedback before the official release.</p>
             <ul class="notice-list">
                 <li><span class="icon-yes">✓</span> Complete gameplay (30 levels)</li>
                 <li><span class="icon-yes">✓</span> Available on Android</li>
@@ -443,29 +444,36 @@
         <h2 class="section-title">Your Opinion Matters</h2>
         <div class="feedback-box">
             <p>Have you tried Marble5?<br>Help us improve the game by sharing your experience!</p>
-            <a href="#" class="cta-button primary">📝 Give Feedback</a>
+            <button class="cta-button primary disabled">📝 Give Feedback</button>
+            <p class="coming-soon-text">Coming soon</p>
         </div>
     </section>
 
     <section class="about-section" id="about">
-        <h2 class="section-title">Rymo Studio</h2>
-        <div class="about-box">
-            <p>Behind this name are <strong>Rudy and Manolo</strong> — two friends who share a passion for games.</p>
-            <p>Marble5 was born from a childhood memory: a marble game we used to draw on paper. Years later, we decided to bring it to life.</p>
-            <p>This is our first game, and hopefully not our last!</p>
-            <a href="mailto:contact@marble5.app" class="contact-link">📧 contact@marble5.app</a>
+        <div class="accordion-container">
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span>🎮 Nom studio à définir</span>
+                    <span class="accordion-icon">+</span>
+                </button>
+                <div class="accordion-content">
+                    <p>Behind this name are <strong>Rudy and Manolo</strong> — two friends who share a passion for games.</p>
+                    <p>Marble5 was born from a childhood memory: a marble game we used to draw on paper. Years later, we decided to bring it to life.</p>
+                    <p><span class="contact-link">📧 coming soon</span></p>
+                </div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="../logo.png" alt="Rymo Studio"></div>
-        <div class="footer-studio">RYMO STUDIO</div>
+        <div class="footer-logo"><img src="../logo.png" alt="Nom studio à définir"></div>
+        <div class="footer-studio">NOM STUDIO À DÉFINIR</div>
         <div class="footer-links">
             <a href="#rules">Game Rules</a>
-            <a href="mailto:contact@marble5.app">Contact</a>
+            <span>Contact (coming soon)</span>
             <a href="#" class="ios-notify-link">Notify me for iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Rymo Studio — Marble5 is in development</p>
+        <p class="footer-copy">© 2025 Nom studio à définir — Marble5 is in development</p>
     </footer>
 
     <!-- Language Switcher -->
