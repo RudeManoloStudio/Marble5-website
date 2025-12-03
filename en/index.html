@@ -88,7 +88,7 @@
             .marble-1, .marble-2, .marble-3, .marble-4, .marble-5 { left: -15px; }
             .marble-6, .marble-7, .marble-8, .marble-9, .marble-10 { right: -15px; }
         }
-        .hero-content { position: relative; z-index: 1; max-width: 800px; }
+        .hero-content { position: relative; z-index: 1; max-width: 800px; padding-top: 3rem; }
         .badge-proto {
             display: inline-block; padding: 0.5rem 1.25rem; background: rgba(251, 146, 60, 0.15);
             border: 1px solid var(--marble-orange); border-radius: 25px; font-size: 0.8rem;
@@ -100,13 +100,24 @@
             animation: float-slow 6s ease-in-out infinite, fade-up 1s ease-out;
             filter: drop-shadow(0 20px 40px rgba(72, 149, 239, 0.3)); border-radius: 20px;
         }
-        .hero-video {
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%; min-height: 100%;
-            width: auto; height: auto;
-            object-fit: cover; z-index: 0;
-            opacity: 0.3;
+        .phone-mockup {
+            position: relative; width: 200px; max-width: 50vw; margin: 0 auto 2rem auto;
+            background: linear-gradient(145deg, #1a1a2e, #16162a);
+            border-radius: 30px; padding: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(72, 149, 239, 0.2),
+                        inset 0 1px 1px rgba(255,255,255,0.1);
+            animation: float-slow 6s ease-in-out infinite, fade-up 1s ease-out;
+        }
+        .phone-mockup::before {
+            content: ''; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 6px; background: #0a0a14; border-radius: 3px;
+        }
+        .phone-screen {
+            width: 100%; aspect-ratio: 9/16; border-radius: 22px; overflow: hidden;
+            background: #000;
+        }
+        .phone-screen video {
+            width: 100%; height: 100%; object-fit: cover;
         }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         .hero h1 {
@@ -188,7 +199,74 @@
         .concept-card h3 { font-family: 'Quicksand', sans-serif; font-size: 1.15rem; margin-bottom: 0.75rem; }
         .concept-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
 
-        .gallery-section { padding-bottom: 3rem; }
+        .gallery-section { padding-bottom: 1rem; }
+
+        /* Expandable Gallery */
+        .gallery-expand { text-align: center; margin-top: 1.5rem; }
+        .gallery-expand-btn {
+            display: inline-flex; align-items: center; gap: 0.5rem;
+            padding: 0.75rem 1.5rem; background: transparent;
+            border: 1px solid rgba(255,255,255,0.2); border-radius: 25px;
+            color: var(--text-secondary); font-family: 'Exo 2', sans-serif;
+            font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease;
+        }
+        .gallery-expand-btn:hover { border-color: var(--accent-secondary); color: var(--text-primary); }
+        .gallery-expand-btn svg { transition: transform 0.3s ease; }
+        .gallery-expand-btn.active svg { transform: rotate(180deg); }
+
+        .gallery-carousel-section {
+            max-height: 0; overflow: hidden; opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+        .gallery-carousel-section.active {
+            max-height: 600px; opacity: 1; padding: 2rem 1.5rem;
+        }
+
+        .carousel-container { display: flex; flex-direction: column; align-items: center; gap: 1.5rem; }
+        .carousel-phone {
+            position: relative; width: 220px; max-width: 60vw;
+            background: linear-gradient(145deg, #1a1a2e, #16162a);
+            border-radius: 30px; padding: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(72, 149, 239, 0.2);
+        }
+        .carousel-phone::before {
+            content: ''; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 6px; background: #0a0a14; border-radius: 3px;
+        }
+        .carousel-screen {
+            width: 100%; aspect-ratio: 9/16; border-radius: 22px; overflow: hidden;
+            background: #000; position: relative;
+        }
+        .carousel-screen img {
+            width: 100%; height: 100%; object-fit: cover;
+            position: absolute; top: 0; left: 0;
+            opacity: 0; transition: opacity 0.5s ease;
+        }
+        .carousel-screen img.active { opacity: 1; }
+
+        .carousel-controls {
+            display: flex; align-items: center; gap: 1rem;
+        }
+        .carousel-btn {
+            width: 44px; height: 44px; border-radius: 50%;
+            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-primary); cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .carousel-btn:hover { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
+        .carousel-dots { display: flex; gap: 0.5rem; }
+        .carousel-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: rgba(255,255,255,0.3); border: none; cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-dot.active { background: var(--accent-secondary); transform: scale(1.3); }
+        .carousel-label {
+            font-size: 0.9rem; color: var(--text-secondary);
+            margin-top: 0.5rem; text-align: center;
+        }
         .gallery-container { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
         .gallery-item { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 9/16; cursor: pointer; transition: transform 0.3s ease; }
         .gallery-item:hover { transform: scale(1.03); }
@@ -338,9 +416,6 @@
     </div>
 
     <section class="hero">
-        <video class="hero-video" autoplay loop muted playsinline>
-            <source src="../Hero_movie.mp4" type="video/mp4">
-        </video>
         <div class="floating-marbles">
             <div class="marble marble-1"></div>
             <div class="marble marble-2"></div>
@@ -357,6 +432,15 @@
             <div class="badge-proto">🚀 Closed Beta</div>
 
             <h1>MARBLE5</h1>
+
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <video autoplay loop muted playsinline>
+                        <source src="../Hero_movie.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
             <p class="tagline">Align 5 marbles. Form quints. <strong>Master the grid.</strong></p>
 
             <div class="countdown-container">
@@ -377,9 +461,6 @@
                 <p class="coming-soon-text">Sign up for notifications coming soon</p>
                 <a href="#concept" class="cta-button secondary">Discover the game ↓</a>
             </div>
-        </div>
-        <div class="scroll-hint">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
         </div>
     </section>
 
@@ -411,15 +492,48 @@
         <div class="gallery-container">
             <div class="gallery-item">
                 <img src="../screenshot_foret.png" alt="Forest Levels">
-                <span class="gallery-label">🌲 Forest · Levels 1-9</span>
+                <span class="gallery-label">🌲 Forest · Levels 1-10</span>
             </div>
             <div class="gallery-item">
                 <img src="../screenshot_ruines.png" alt="Ruins Levels">
-                <span class="gallery-label">🏛️ Ruins · Levels 10-19</span>
+                <span class="gallery-label">🏛️ Ruins · Levels 11-20</span>
             </div>
             <div class="gallery-item">
                 <img src="../screenshot_espace.png" alt="Space Levels">
-                <span class="gallery-label">🌌 Space · Levels 20-30</span>
+                <span class="gallery-label">🌌 Space · Levels 21-30</span>
+            </div>
+        </div>
+        <div class="gallery-expand">
+            <button class="gallery-expand-btn" id="expandGalleryBtn">
+                See more backgrounds
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+        </div>
+        <div class="gallery-carousel-section" id="galleryCarousel">
+            <div class="carousel-container">
+                <div class="carousel-phone">
+                    <div class="carousel-screen">
+                        <img src="../backgrounds/ForestBG_4.jpg" alt="Forest 1" class="active" data-theme="🌲 Forest">
+                        <img src="../backgrounds/ForestBG_5.jpg" alt="Forest 2" data-theme="🌲 Forest">
+                        <img src="../backgrounds/ForestBG_9.jpg" alt="Forest 3" data-theme="🌲 Forest">
+                        <img src="../backgrounds/RuinBG_2.jpg" alt="Ruins 1" data-theme="🏛️ Ruins">
+                        <img src="../backgrounds/RuinBG_5.jpg" alt="Ruins 2" data-theme="🏛️ Ruins">
+                        <img src="../backgrounds/RuinBG_9.jpg" alt="Ruins 3" data-theme="🏛️ Ruins">
+                        <img src="../backgrounds/SpaceBG_02.jpg" alt="Space 1" data-theme="🌌 Space">
+                        <img src="../backgrounds/SpaceBG_06.jpg" alt="Space 2" data-theme="🌌 Space">
+                        <img src="../backgrounds/SpaceBG_10.jpg" alt="Space 3" data-theme="🌌 Space">
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                    <button class="carousel-btn" id="nextBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+                <p class="carousel-label" id="carouselLabel">🌲 Forest</p>
             </div>
         </div>
     </section>
@@ -615,6 +729,62 @@
                 accordion.classList.toggle('active');
             });
         });
+
+        // Gallery Carousel
+        const expandBtn = document.getElementById('expandGalleryBtn');
+        const carouselSection = document.getElementById('galleryCarousel');
+        const carouselImages = document.querySelectorAll('.carousel-screen img');
+        const dotsContainer = document.getElementById('carouselDots');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselLabel = document.getElementById('carouselLabel');
+        let currentIndex = 0;
+
+        // Create dots
+        carouselImages.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel-dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+            carouselImages.forEach((img, i) => {
+                img.classList.toggle('active', i === currentIndex);
+            });
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+            carouselLabel.textContent = carouselImages[currentIndex].dataset.theme;
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % carouselImages.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+            updateCarousel();
+        }
+
+        expandBtn.addEventListener('click', () => {
+            expandBtn.classList.toggle('active');
+            carouselSection.classList.toggle('active');
+            expandBtn.innerHTML = expandBtn.classList.contains('active')
+                ? 'Close gallery <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>'
+                : 'See more backgrounds <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+        });
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
 
         // Countdown Timer - December 31, 2025 at midnight (Paris time)
         const betaDate = new Date('2025-12-31T00:00:00+01:00').getTime();
