@@ -99,6 +99,25 @@
             animation: float-slow 6s ease-in-out infinite, fade-up 1s ease-out;
             filter: drop-shadow(0 20px 40px rgba(72, 149, 239, 0.3)); border-radius: 20px;
         }
+        .phone-mockup {
+            position: relative; width: 200px; max-width: 50vw; margin: 0 auto 2rem auto;
+            background: linear-gradient(145deg, #1a1a2e, #16162a);
+            border-radius: 30px; padding: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(72, 149, 239, 0.2),
+                        inset 0 1px 1px rgba(255,255,255,0.1);
+            animation: float-slow 6s ease-in-out infinite, fade-up 1s ease-out;
+        }
+        .phone-mockup::before {
+            content: ''; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 6px; background: #0a0a14; border-radius: 3px;
+        }
+        .phone-screen {
+            width: 100%; aspect-ratio: 9/16; border-radius: 22px; overflow: hidden;
+            background: #000;
+        }
+        .phone-screen video {
+            width: 100%; height: 100%; object-fit: cover;
+        }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         .hero h1 {
             font-family: 'Quicksand', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900;
@@ -343,6 +362,15 @@
             <div class="badge-proto">🚀 Beta cerrada</div>
 
             <h1>MARBLE5</h1>
+
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <video autoplay loop muted playsinline>
+                        <source src="../Hero_movie.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
             <p class="tagline">Alinea 5 canicas. Forma quinas. <strong>Domina la cuadrícula.</strong></p>
 
             <div class="countdown-container">
