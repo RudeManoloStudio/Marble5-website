@@ -100,6 +100,14 @@
             animation: float-slow 6s ease-in-out infinite, fade-up 1s ease-out;
             filter: drop-shadow(0 20px 40px rgba(72, 149, 239, 0.3)); border-radius: 20px;
         }
+        .hero-video {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%; min-height: 100%;
+            width: auto; height: auto;
+            object-fit: cover; z-index: 0;
+            opacity: 0.3;
+        }
         @keyframes float-slow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         .hero h1 {
             font-family: 'Quicksand', sans-serif; font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 900;
@@ -330,6 +338,9 @@
     </div>
 
     <section class="hero">
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="../Hero_movie.mp4" type="video/mp4">
+        </video>
         <div class="floating-marbles">
             <div class="marble marble-1"></div>
             <div class="marble marble-2"></div>
