@@ -29,6 +29,16 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Exo 2', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
 
+        /* WIP Banner */
+        .wip-banner {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
+            background: linear-gradient(90deg, var(--marble-orange), #e65c00);
+            color: white; text-align: center; padding: 0.6rem 1rem;
+            font-size: 0.85rem; font-weight: 600;
+        }
+        .wip-banner span { margin-right: 0.5rem; }
+        body { padding-top: 40px; }
+
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; padding: 2rem; position: relative;
@@ -172,15 +182,33 @@
         .mode-card.zen li::before { color: var(--accent-secondary); }
         .mode-card.challenge li::before { color: var(--marble-orange); }
 
-        .notice-section { text-align: center; }
-        .notice-box { max-width: 600px; margin: 0 auto; padding: 2.5rem 2rem; background: linear-gradient(135deg, rgba(251, 146, 60, 0.08), rgba(230, 57, 70, 0.04)); border: 1px solid rgba(251, 146, 60, 0.25); border-radius: 16px; }
-        .notice-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-        .notice-box h3 { font-family: 'Quicksand', sans-serif; color: var(--marble-orange); margin-bottom: 0.75rem; font-size: 1.2rem; }
-        .notice-box > p { color: var(--text-secondary); margin-bottom: 1.5rem; }
-        .notice-list { list-style: none; text-align: left; max-width: 320px; margin: 0 auto; }
-        .notice-list li { padding: 0.5rem 0; color: var(--text-secondary); display: flex; align-items: center; gap: 0.75rem; font-size: 0.95rem; }
-        .icon-yes { color: var(--marble-green); font-weight: bold; }
-        .icon-no { color: var(--marble-red); font-weight: bold; }
+        /* Beta Section */
+        .beta-section { padding: 5rem 1.5rem; background: linear-gradient(180deg, rgba(72, 149, 239, 0.05) 0%, rgba(16, 20, 32, 0.8) 50%, rgba(72, 149, 239, 0.05) 100%); }
+        .beta-container { max-width: 900px; margin: 0 auto; }
+        .beta-header { text-align: center; margin-bottom: 3rem; }
+        .beta-badge { display: inline-block; padding: 0.5rem 1.25rem; background: rgba(72, 149, 239, 0.15); border: 1px solid var(--accent-primary); border-radius: 25px; font-size: 0.75rem; font-weight: 700; color: var(--accent-primary); letter-spacing: 0.15em; margin-bottom: 1.5rem; }
+        .beta-title { font-family: 'Quicksand', sans-serif; font-size: clamp(1.6rem, 5vw, 2.2rem); margin-bottom: 1rem; }
+        .beta-intro { color: var(--text-secondary); font-size: 1.1rem; }
+        .beta-intro strong { color: var(--accent-secondary); }
+        .beta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+        .beta-card { background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 2rem; transition: all 0.3s ease; }
+        .beta-card:hover { transform: translateY(-5px); border-color: rgba(72, 149, 239, 0.3); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); }
+        .beta-card.highlight { background: linear-gradient(135deg, rgba(72, 149, 239, 0.1), rgba(34, 211, 238, 0.05)); border-color: rgba(72, 149, 239, 0.3); }
+        .beta-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .beta-card h3 { font-family: 'Quicksand', sans-serif; font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary); }
+        .beta-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .beta-card ul { list-style: none; color: var(--text-secondary); }
+        .beta-card li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; }
+        .beta-card li::before { content: '→'; position: absolute; left: 0; color: var(--accent-secondary); }
+        .beta-card li strong { color: var(--text-primary); }
+        .beta-footer { text-align: center; }
+        .beta-stats { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .stat { display: flex; flex-direction: column; align-items: center; }
+        .stat-number { font-family: 'Quicksand', sans-serif; font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .stat-label { font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+        .beta-note { display: inline-block; padding: 1rem 1.5rem; background: rgba(251, 146, 60, 0.1); border: 1px solid rgba(251, 146, 60, 0.3); border-radius: 12px; color: var(--text-secondary); font-size: 0.9rem; }
+        .beta-note strong { color: var(--marble-orange); }
+        @media (max-width: 768px) { .beta-stats { gap: 2rem; } .stat-number { font-size: 2rem; } }
 
         .feedback-section { text-align: center; background: linear-gradient(180deg, transparent 0%, rgba(72, 149, 239, 0.08) 50%, transparent 100%); }
         .feedback-box { max-width: 500px; margin: 0 auto; padding: 2.5rem 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
@@ -274,6 +302,10 @@
     </script>
 </head>
 <body>
+    <div class="wip-banner">
+        <span>🚧</span> Website under construction — Some features are not yet available
+    </div>
+
     <section class="hero">
         <div class="floating-marbles">
             <div class="marble marble-1"></div>
@@ -425,18 +457,61 @@
         </div>
     </section>
 
-    <section class="notice-section">
-        <div class="notice-box">
-            <div class="notice-icon">⚠️</div>
-            <h3>Closed Beta</h3>
-            <p>This version is for testing gameplay and gathering your valuable feedback before the official release.</p>
-            <ul class="notice-list">
-                <li><span class="icon-yes">✓</span> Complete gameplay (30 levels)</li>
-                <li><span class="icon-yes">✓</span> Available on Android</li>
-                <li><span class="icon-yes">✓</span> Free</li>
-                <li><span class="icon-no">✗</span> Not yet available on iOS</li>
-                <li><span class="icon-no">✗</span> Visuals and sounds not final</li>
-            </ul>
+    <section class="beta-section" id="beta">
+        <div class="beta-container">
+            <div class="beta-header">
+                <div class="beta-badge">🔒 EXCLUSIVE ACCESS</div>
+                <h2 class="beta-title">What is the Closed Beta?</h2>
+                <p class="beta-intro">Be among the <strong>first 100 players</strong> to discover Marble5 before everyone else.</p>
+            </div>
+
+            <div class="beta-grid">
+                <div class="beta-card">
+                    <div class="beta-card-icon">📱</div>
+                    <h3>Distribution via Google Play</h3>
+                    <p>The game is distributed through Google Play Store's <strong>internal testing program</strong>. Contact us to receive a personal invitation link that gives you access to download.</p>
+                </div>
+
+                <div class="beta-card">
+                    <div class="beta-card-icon">🔬</div>
+                    <h3>Why this phase?</h3>
+                    <ul>
+                        <li>Identify <strong>bugs and issues</strong> before release</li>
+                        <li>Test <strong>compatibility</strong> across different Android devices</li>
+                        <li>Validate the <strong>balance</strong> of all 30 levels</li>
+                        <li>Optimize game <strong>performance</strong></li>
+                    </ul>
+                </div>
+
+                <div class="beta-card highlight">
+                    <div class="beta-card-icon">💬</div>
+                    <h3>What we expect from you</h3>
+                    <ul>
+                        <li>Tell us if you <strong>enjoy the game</strong> (or not!)</li>
+                        <li>Report any <strong>strange behavior</strong> or crashes</li>
+                        <li>Share your ideas for <strong>improvements</strong></li>
+                        <li>Let us know your <strong>phone model</strong> if issues occur</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="beta-footer">
+                <div class="beta-stats">
+                    <div class="stat">
+                        <span class="stat-number">100</span>
+                        <span class="stat-label">Spots available</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">30</span>
+                        <span class="stat-label">Playable levels</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Free</span>
+                    </div>
+                </div>
+                <p class="beta-note">⚠️ <strong>Reminder:</strong> Visuals and sounds are not final. You're testing the gameplay, not the finished product!</p>
+            </div>
         </div>
     </section>
 
