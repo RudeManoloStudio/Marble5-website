@@ -109,4 +109,48 @@ Un beau site vitrine, mais **pas un site de conversion**. En l'état, c'est une 
 
 ---
 
+## STRATÉGIE DE FEEDBACK JOUEURS
+
+### La réalité du terrain
+
+**Les joueurs ne vont JAMAIS sur un site pour donner leur avis.** C'est trop de friction.
+
+### Efficacité des canaux de feedback (par ordre décroissant) :
+
+| Canal | Taux de retour | Type de feedback |
+|-------|----------------|------------------|
+| **In-app popup** | ~5-15% | Rapide, émotionnel |
+| **Google Play review** | ~1-3% | Public, court |
+| **Discord** | Variable | Communauté, détaillé |
+| **Site web** | ~0.1% | Quasi nul |
+
+### Recommandations pour Marble5 :
+
+#### 1. Dans le jeu (PRIORITAIRE)
+Un bouton "Donner mon avis" qui ouvre :
+- Soit un mini-formulaire intégré (3 questions max)
+- Soit un lien vers un Google Form
+- Soit directement le Play Store pour noter
+
+#### 2. Le timing est crucial
+Demander l'avis **après un moment positif** :
+- ✅ Après avoir obtenu 3 étoiles sur un niveau
+- ✅ Après avoir débloqué un nouvel univers
+- ❌ PAS après un échec
+
+#### 3. Sur le site
+La section "Votre Avis Compte" devrait être transformée en simple lien vers le même Google Form que le jeu (cohérence des canaux).
+
+### Conclusion
+
+| Objectif du site | Objectif du jeu |
+|------------------|-----------------|
+| **Présenter** le jeu | **Collecter** les avis |
+| **Recruter** des testeurs | **Fidéliser** les joueurs |
+| **Informer** sur la bêta | **Améliorer** via feedback |
+
+Le site sert à **attirer**, le jeu sert à **retenir et écouter**.
+
+---
+
 *Analyse réalisée le 03/12/2025*
