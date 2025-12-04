@@ -3,6 +3,15 @@
 
 ---
 
+## HISTORIQUE DES MISES À JOUR
+
+| Date | Version | Changements majeurs |
+|------|---------|---------------------|
+| 03/12/2025 | 1.0 | Analyse initiale |
+| 04/12/2025 | 2.0 | Ajout identité studio, nouveau logo, texte humoristique, nettoyage footer |
+
+---
+
 ## CE QUI FONCTIONNE TRÈS BIEN
 
 ### 1. Identité visuelle
@@ -19,35 +28,41 @@
 - Crée l'exclusivité sans arrogance
 - Explique clairement le "deal" testeur
 
+### 4. Identité du Studio (NOUVEAU)
+- **Nom choisi** : "One Last Move Studio" - parfaitement aligné avec le gameplay
+- **Logo** : Professionnel, illustre le dev passionné qui code la nuit
+- **Texte humoristique** : Crée une connexion émotionnelle avec les gamers
+- **Mise en page** : Logo + texte côte à côte, très efficace
+
 ---
 
 ## POINTS CRITIQUES À CORRIGER
 
 ### PRIORITÉ HAUTE
 
-| Problème | Impact | Solution |
-|----------|--------|----------|
-| **Hero sans image du jeu** | Le visiteur ne voit PAS le gameplay avant de scroller | Ajouter un screenshot/GIF animé du jeu dans le hero |
-| **Aucun CTA fonctionnel** | Zéro conversion possible | Le bouton "Bientôt disponible" + "Inscription à venir" = frustration. Mettre un formulaire email MAINTENANT |
-| **Pas de vidéo** | En 2025, un jeu sans trailer = amateur | Même 15 secondes de gameplay suffisent |
-| **"Nom studio à définir"** | Tue la crédibilité instantanément | Choisir un nom, même provisoire, ou retirer la section |
+| Problème | Impact | Solution | Statut |
+|----------|--------|----------|--------|
+| ~~**"Nom studio à définir"**~~ | ~~Tue la crédibilité instantanément~~ | ~~Choisir un nom~~ | ✅ CORRIGÉ |
+| **Hero sans image du jeu** | Le visiteur ne voit PAS le gameplay avant de scroller | Ajouter un screenshot/GIF animé du jeu dans le hero | ⚠️ Vidéo ajoutée dans mockup |
+| **Aucun CTA fonctionnel** | Zéro conversion possible | Le bouton "Bientôt disponible" + "Inscription à venir" = frustration. Mettre un formulaire email MAINTENANT | ❌ À FAIRE |
+| **Pas de vidéo** | En 2025, un jeu sans trailer = amateur | Même 15 secondes de gameplay suffisent | ⚠️ Vidéo hero ajoutée |
 
 ### PRIORITÉ MOYENNE
 
-| Problème | Impact | Solution |
-|----------|--------|----------|
-| **Section Feedback inutile** | Bouton désactivé = pourquoi l'afficher ? | Soit l'activer (Google Form), soit la supprimer |
-| **Pas de preuve sociale** | Aucun témoignage, aucune stat de joueurs | Ajouter des quotes de beta-testeurs dès que possible |
-| **Footer incomplet** | "Contact (en cours)" = pas pro | Mettre au moins une adresse email |
-| **Lien iOS fantôme** | "Me prévenir pour iOS" ne fait rien | Connecter à un formulaire ou retirer |
+| Problème | Impact | Solution | Statut |
+|----------|--------|----------|--------|
+| **Section Feedback inutile** | Bouton désactivé = pourquoi l'afficher ? | Soit l'activer (Google Form), soit la supprimer | ❌ À FAIRE |
+| **Pas de preuve sociale** | Aucun témoignage, aucune stat de joueurs | Ajouter des quotes de beta-testeurs dès que possible | ❌ À FAIRE |
+| **Footer incomplet** | "Contact (en cours)" = pas pro | Mettre au moins une adresse email | ⚠️ Nettoyé mais contact manquant |
+| ~~**Lien iOS fantôme**~~ | ~~"Me prévenir pour iOS" ne fait rien~~ | ~~Connecter à un formulaire ou retirer~~ | ✅ SUPPRIMÉ |
 
 ### PRIORITÉ BASSE
 
-| Problème | Impact | Solution |
-|----------|--------|----------|
-| **3 screenshots statiques** | Pas assez immersif | Ajouter un carousel ou lightbox |
-| **Règles en accordéon** | Friction pour comprendre le jeu | Envisager une version "règles en 30 secondes" plus visuelle |
-| **Pas de FAQ** | Questions courantes non adressées | "C'est gratuit ?", "Quand la sortie ?", "iOS ?" |
+| Problème | Impact | Solution | Statut |
+|----------|--------|----------|--------|
+| ~~**3 screenshots statiques**~~ | ~~Pas assez immersif~~ | ~~Ajouter un carousel ou lightbox~~ | ✅ CORRIGÉ (galerie) |
+| **Règles en accordéon** | Friction pour comprendre le jeu | Envisager une version "règles en 30 secondes" plus visuelle | ❌ À FAIRE |
+| **Pas de FAQ** | Questions courantes non adressées | "C'est gratuit ?", "Quand la sortie ?", "iOS ?" | ❌ À FAIRE |
 
 ---
 
@@ -63,49 +78,80 @@
 - Hero → **"Rejoindre la Bêta"** (CTA actif vers formulaire)
 - Retirer "Bientôt disponible" qui implique que ce n'est pas encore le cas
 
+**Statut : ❌ À CORRIGER**
+
 ---
 
 ## CONVERSIONS PERDUES
 
 En l'état actuel, un visiteur intéressé :
-1. Ne peut pas s'inscrire à la bêta
-2. Ne peut pas être notifié
-3. Ne peut pas donner son feedback
-4. Ne peut pas contacter l'équipe
+1. ❌ Ne peut pas s'inscrire à la bêta
+2. ❌ Ne peut pas être notifié
+3. ❌ Ne peut pas donner son feedback
+4. ❌ Ne peut pas contacter l'équipe
 
 **Résultat : 100% des visiteurs repartent sans laisser de trace.**
+
+**Statut : INCHANGÉ - Priorité absolue**
 
 ---
 
 ## RECOMMANDATIONS IMMÉDIATES
 
 ### À faire cette semaine :
-1. **Formulaire email** (Mailchimp/Brevo gratuit) → CTA hero
-2. **Nom de studio** (même temporaire)
-3. **Email de contact** fonctionnel
-4. **Supprimer** les éléments "en cours" / "bientôt"
+
+| Action | Statut |
+|--------|--------|
+| ~~Nom de studio~~ | ✅ FAIT - "One Last Move Studio" |
+| **Formulaire email** (Mailchimp/Brevo gratuit) → CTA hero | ❌ À FAIRE |
+| **Email de contact** fonctionnel | ❌ À FAIRE |
+| ~~Supprimer les éléments "en cours" / "bientôt"~~ | ⚠️ PARTIEL (lien iOS supprimé) |
 
 ### À faire ce mois :
-5. **Vidéo gameplay** 15-30 secondes
-6. **Image/GIF** dans le hero
-7. **Témoignages** de premiers testeurs
+
+| Action | Statut |
+|--------|--------|
+| **Vidéo gameplay** 15-30 secondes | ⚠️ PARTIEL (vidéo hero) |
+| ~~Image/GIF dans le hero~~ | ✅ FAIT (mockup téléphone + vidéo) |
+| **Témoignages** de premiers testeurs | ❌ À FAIRE |
 
 ---
 
 ## SCORE GLOBAL
 
-| Critère | Note | Commentaire |
-|---------|------|-------------|
-| Design | 8/10 | Très pro pour un indie |
-| UX/Navigation | 7/10 | Claire mais longue |
-| Copywriting | 7/10 | Bon mais peut être plus punchy |
-| **Conversion** | **2/10** | **Aucun mécanisme de capture** |
-| Crédibilité | 5/10 | Plombée par les placeholders |
-| Mobile | 8/10 | Responsive bien géré |
+### Évolution des notes
 
-### Note finale : 6/10
+| Critère | V1.0 (03/12) | V2.0 (04/12) | Évolution | Commentaire |
+|---------|--------------|--------------|-----------|-------------|
+| Design | 8/10 | 8.5/10 | ↗️ +0.5 | Logo studio pro ajouté |
+| UX/Navigation | 7/10 | 7.5/10 | ↗️ +0.5 | Footer nettoyé, moins de liens morts |
+| Copywriting | 7/10 | 8/10 | ↗️ +1 | Texte studio humoristique et authentique |
+| **Conversion** | **2/10** | **2/10** | ➡️ 0 | **Toujours aucun mécanisme de capture** |
+| Crédibilité | 5/10 | 7/10 | ↗️ +2 | Studio nommé, logo pro, moins de placeholders |
+| Mobile | 8/10 | 8/10 | ➡️ 0 | Responsive toujours OK |
 
-Un beau site vitrine, mais **pas un site de conversion**. En l'état, c'est une brochure qu'on regarde et qu'on ferme. Il manque le "et maintenant, que fait le visiteur ?"
+### Note finale : 6/10 → 7/10 (+1)
+
+---
+
+## RÉSUMÉ DES PROGRÈS
+
+### Ce qui a été amélioré :
+- ✅ **Identité studio complète** : Nom "One Last Move Studio" + logo professionnel
+- ✅ **Texte authentique** : Le texte humoristique crée une vraie connexion avec les gamers
+- ✅ **Footer nettoyé** : Suppression du lien iOS inutile et du logo en doublon
+- ✅ **Galerie d'images** : Carousel interactif ajouté
+- ✅ **Vidéo hero** : Mockup téléphone avec vidéo
+
+### Ce qui stagne (PRIORITAIRE) :
+- ❌ **Conversion = 0** : Toujours impossible de capturer un email ou un contact
+- ❌ **CTA non fonctionnels** : Les boutons principaux ne font rien
+- ❌ **Contact manquant** : Pas d'email de contact fonctionnel
+
+### Prochaines étapes recommandées :
+1. **Formulaire email** - Impact immédiat sur la conversion
+2. **Email de contact** - Crédibilité professionnelle
+3. **Activer la section feedback** - Engagement communauté
 
 ---
 
@@ -153,4 +199,5 @@ Le site sert à **attirer**, le jeu sert à **retenir et écouter**.
 
 ---
 
-*Analyse réalisée le 03/12/2025*
+*Analyse initiale : 03/12/2025*
+*Dernière mise à jour : 04/12/2025*

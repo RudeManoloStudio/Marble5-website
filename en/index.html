@@ -349,6 +349,12 @@
 
         /* About Section */
         .about-section { text-align: center; }
+        .studio-content { display: flex; align-items: center; gap: 1.5rem; text-align: left; }
+        .studio-logo { width: 120px; height: 120px; flex-shrink: 0; }
+        @media (max-width: 600px) {
+            .studio-content { flex-direction: column; text-align: center; }
+            .studio-logo { width: 100px; height: 100px; }
+        }
         .about-box { max-width: 550px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .about-box p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1rem; line-height: 1.7; }
         .about-box strong { color: var(--text-primary); }
@@ -361,8 +367,8 @@
         .contact-link:hover { background: rgba(34, 211, 238, 0.1); }
 
         footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-dark); }
-        .footer-logo { width: 80px; height: 80px; margin: 0 auto 1rem; border-radius: 50%; overflow: hidden; }
-        .footer-logo img { width: 100%; height: 100%; object-fit: cover; }
+        .footer-logo { width: 150px; height: 150px; margin: 0 auto 1rem; }
+        .footer-logo img { width: 100%; height: 100%; object-fit: contain; }
         .footer-studio { font-family: 'Quicksand', sans-serif; font-size: 1rem; color: var(--text-secondary); margin-bottom: 1.5rem; }
         .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
         .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
@@ -690,27 +696,24 @@
         <div class="accordion-container">
             <div class="accordion">
                 <button class="accordion-header">
-                    <span>🎮 Nom studio à définir</span>
+                    <span>🎮 One Last Move Studio</span>
                     <span class="accordion-icon">+</span>
                 </button>
-                <div class="accordion-content">
-                    <p>Behind this name are <strong>Rudy and Manolo</strong> — two friends who share a passion for games.</p>
-                    <p>Marble5 was born from a childhood memory: a marble game we used to draw on paper. Years later, we decided to bring it to life.</p>
-                    <p><span class="contact-link">📧 coming soon</span></p>
+                <div class="accordion-content studio-content">
+                    <img src="../OLM logo 400.png" alt="One Last Move Studio" class="studio-logo">
+                    <p>Behind this name are all those gamers with bloodshot eyes and a goofy grin, who know it's 3:30 in the freaking morning, that they have work tomorrow, that they should call it a night... But... come on... just... <strong>one... last... move...</strong></p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo"><img src="../logo.png" alt="Nom studio à définir"></div>
-        <div class="footer-studio">NOM STUDIO À DÉFINIR</div>
+        <div class="footer-studio">ONE LAST MOVE STUDIO</div>
         <div class="footer-links">
             <a href="#rules">Game Rules</a>
             <span>Contact (coming soon)</span>
-            <a href="#" class="ios-notify-link">Notify me for iOS</a>
         </div>
-        <p class="footer-copy">© 2025 Nom studio à définir — Marble5 is in development</p>
+        <p class="footer-copy">© 2025 One Last Move Studio — Marble5 is in development</p>
     </footer>
 
     <!-- Language Switcher -->
