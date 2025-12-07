@@ -306,6 +306,8 @@
         .beta-card-icon { font-size: 2rem; margin-bottom: 1rem; }
         .beta-card h3 { font-family: 'Quicksand', sans-serif; font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-primary); }
         .beta-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .beta-card p a { color: var(--accent-secondary); font-weight: 600; }
+        .beta-card p a:hover { text-decoration: underline; }
         .beta-card ul { list-style: none; color: var(--text-secondary); }
         .beta-card li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; font-size: 0.95rem; }
         .beta-card li::before { content: '→'; position: absolute; left: 0; color: var(--accent-secondary); }
@@ -349,11 +351,10 @@
 
         /* About Section */
         .about-section { text-align: center; }
-        .studio-content { display: flex; align-items: center; gap: 1.5rem; text-align: left; }
-        .studio-logo { width: 120px; height: 120px; flex-shrink: 0; }
+        .studio-content { display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; }
+        .studio-banner { width: 100%; max-width: 400px; height: auto; border-radius: 12px; }
         @media (max-width: 600px) {
-            .studio-content { flex-direction: column; text-align: center; }
-            .studio-logo { width: 100px; height: 100px; }
+            .studio-banner { max-width: 300px; }
         }
         .about-box { max-width: 550px; margin: 0 auto; padding: 2rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; }
         .about-box p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 1rem; line-height: 1.7; }
@@ -365,6 +366,34 @@
             transition: all 0.3s ease;
         }
         .contact-link:hover { background: rgba(34, 211, 238, 0.1); }
+
+        /* Contact Section */
+        .contact-section { text-align: center; }
+        .contact-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem; max-width: 700px; margin: 0 auto;
+        }
+        .contact-card {
+            display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+            padding: 1.5rem 1rem; background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
+            text-decoration: none; color: var(--text-primary);
+            transition: all 0.3s ease; cursor: pointer;
+        }
+        .contact-card:hover {
+            transform: translateY(-3px); border-color: rgba(72, 149, 239, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        .contact-card-icon { font-size: 1.75rem; }
+        .contact-card-title { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: 0.95rem; }
+        .contact-card-desc { font-size: 0.8rem; color: var(--text-muted); }
+        .contact-card.highlight {
+            background: linear-gradient(135deg, rgba(251, 146, 60, 0.15), rgba(230, 57, 70, 0.08));
+            border-color: rgba(251, 146, 60, 0.4);
+        }
+        .contact-card.highlight:hover { border-color: var(--marble-orange); box-shadow: 0 10px 30px rgba(251, 146, 60, 0.2); }
+        .contact-card.highlight .contact-card-title { color: var(--marble-orange); }
+        @media (max-width: 500px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
 
         footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-dark); }
         .footer-logo { width: 150px; height: 150px; margin: 0 auto 1rem; }
@@ -464,7 +493,7 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
                     Bientôt disponible sur Android
                 </button>
-                <p class="coming-soon-text">Inscription pour être notifié à venir</p>
+                <a href="#contact" class="coming-soon-text" style="text-decoration: underline;">Rejoindre la bêta →</a>
                 <a href="#concept" class="cta-button secondary">Découvrir le jeu ↓</a>
             </div>
         </div>
@@ -544,7 +573,7 @@
         </div>
     </section>
 
-    <section class="rules-section" id="regles">
+    <section class="rules-section" id="rules">
         <h2 class="section-title">Les Règles</h2>
         <p class="section-subtitle">Tout ce qu'il faut savoir pour jouer</p>
         
@@ -634,7 +663,7 @@
                 <div class="beta-card">
                     <div class="beta-card-icon">📱</div>
                     <h3>Distribution via Google Play</h3>
-                    <p>Le jeu est distribué via le <strong>programme de test interne</strong> de Google Play Store. Contactez-nous pour recevoir un lien d'invitation personnel qui vous donne accès au téléchargement.</p>
+                    <p>Le jeu est distribué via le <strong>programme de test interne</strong> de Google Play Store. <a href="mailto:contact@marble.app?subject=%F0%9F%9A%80%20Rejoindre%20la%20b%C3%AAta">Contactez-nous</a> pour recevoir un lien d'invitation personnel qui vous donne accès au téléchargement.</p>
                 </div>
 
                 <div class="beta-card">
@@ -692,6 +721,43 @@
         </div>
     </section>
 
+    <section class="contact-section" id="contact">
+        <h2 class="section-title">Nous Contacter</h2>
+        <p class="section-subtitle">Une question ? Un souci ? On est là pour vous aider !</p>
+        <div class="contact-grid">
+            <a href="mailto:contact@marble.app?subject=%F0%9F%9A%80%20Rejoindre%20la%20b%C3%AAta" class="contact-card highlight">
+                <span class="contact-card-icon">🚀</span>
+                <span class="contact-card-title">Rejoindre la bêta</span>
+                <span class="contact-card-desc">Faites partie des premiers !</span>
+            </a>
+            <a href="mailto:contact@marble.app?subject=%F0%9F%90%9B%20Signalement%20de%20bug" class="contact-card">
+                <span class="contact-card-icon">🐛</span>
+                <span class="contact-card-title">Signaler un bug</span>
+                <span class="contact-card-desc">Quelque chose ne fonctionne pas ?</span>
+            </a>
+            <a href="mailto:contact@marble.app?subject=%F0%9F%94%A7%20Probl%C3%A8me%20d%27installation" class="contact-card">
+                <span class="contact-card-icon">🔧</span>
+                <span class="contact-card-title">Problème d'installation</span>
+                <span class="contact-card-desc">Le jeu ne se lance pas ?</span>
+            </a>
+            <a href="mailto:contact@marble.app?subject=%E2%9D%93%20Question%20sur%20le%20jeu" class="contact-card">
+                <span class="contact-card-icon">❓</span>
+                <span class="contact-card-title">Question sur le jeu</span>
+                <span class="contact-card-desc">Besoin d'aide ou d'infos ?</span>
+            </a>
+            <a href="mailto:contact@marble.app?subject=%F0%9F%92%A1%20Feedback%20%2F%20Suggestion" class="contact-card">
+                <span class="contact-card-icon">💡</span>
+                <span class="contact-card-title">Feedback / Suggestion</span>
+                <span class="contact-card-desc">Une idée à partager ?</span>
+            </a>
+            <a href="mailto:contact@marble.app?subject=%F0%9F%93%A9%20Autre%20demande" class="contact-card">
+                <span class="contact-card-icon">📩</span>
+                <span class="contact-card-title">Autre</span>
+                <span class="contact-card-desc">Racontez-nous votre vie !</span>
+            </a>
+        </div>
+    </section>
+
     <section class="about-section" id="about">
         <div class="accordion-container">
             <div class="accordion">
@@ -700,7 +766,7 @@
                     <span class="accordion-icon">+</span>
                 </button>
                 <div class="accordion-content studio-content">
-                    <img src="OLM logo 400.png" alt="One Last Move Studio" class="studio-logo">
+                    <img src="OLM banner.jpg" alt="One Last Move Studio" class="studio-banner">
                     <p>Derrière ce nom, il y a tous ces joueurs aux yeux éclatés et au sourire niais, qui savent qu'il est 3h30 du mat', qu'ils bossent demain, qu'il faut lâcher... Mais... allez... juste... <strong>un... dernier... coup...</strong></p>
                 </div>
             </div>
@@ -710,9 +776,9 @@
     <footer>
         <div class="footer-studio">ONE LAST MOVE STUDIO</div>
         <div class="footer-links">
-            <a href="#regles">Règles du jeu</a>
+            <a href="#rules">Règles du jeu</a>
             <a href="privacy.html">Confidentialité</a>
-            <span>Contact (en cours)</span>
+            <a href="#contact">Contact</a>
         </div>
         <p class="footer-copy">© 2025 One Last Move Studio — Marble5 est en développement</p>
     </footer>
