@@ -392,6 +392,50 @@
         .contact-card.highlight .contact-card-title { color: var(--marble-orange); }
         @media (max-width: 500px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
 
+        /* Modal Form Styles */
+        .modal-overlay { position: fixed; inset: 0; z-index: 2000; background: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; padding: 1rem; }
+        .modal-overlay.active { opacity: 1; visibility: visible; }
+        .modal-content { background: var(--bg-dark); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; animation: modal-appear 0.3s ease; }
+        @keyframes modal-appear { from { opacity: 0; transform: translateY(-20px) scale(0.95); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .modal-header { padding: 1.5rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; align-items: center; }
+        .modal-header h3 { font-family: 'Quicksand', sans-serif; font-size: 1.3rem; margin: 0; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .modal-close { background: none; border: none; color: var(--text-muted); font-size: 1.5rem; cursor: pointer; padding: 0.5rem; transition: color 0.3s ease; }
+        .modal-close:hover { color: var(--text-primary); }
+        .modal-body { padding: 2rem; }
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label { display: block; margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 500; color: var(--text-secondary); }
+        .form-group label .required { color: var(--marble-orange); }
+        .form-input, .form-select, .form-textarea { width: 100%; padding: 0.875rem 1rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; color: var(--text-primary); font-family: 'Exo 2', sans-serif; font-size: 1rem; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--accent-primary); box-shadow: 0 0 0 3px rgba(72, 149, 239, 0.2); }
+        .form-input::placeholder, .form-textarea::placeholder { color: var(--text-muted); }
+        .form-select { cursor: pointer; }
+        .form-select option { background: var(--bg-dark); color: var(--text-primary); }
+        .form-textarea { min-height: 100px; resize: vertical; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .checkbox-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+        .checkbox-item:hover { border-color: rgba(72, 149, 239, 0.4); }
+        .checkbox-item.checked { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
+        .checkbox-item input { display: none; }
+        .checkbox-item span { font-size: 0.9rem; color: var(--text-secondary); }
+        .checkbox-item.checked span { color: var(--text-primary); }
+        .profile-scale { display: flex; flex-direction: column; gap: 0.5rem; }
+        .scale-labels { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); }
+        .scale-options { display: flex; gap: 0.5rem; }
+        .scale-option { flex: 1; padding: 0.75rem 0.5rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
+        .scale-option:hover { border-color: rgba(72, 149, 239, 0.4); }
+        .scale-option.selected { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.15); }
+        .scale-option input { display: none; }
+        .scale-option .scale-number { display: block; font-size: 1.2rem; font-weight: 700; color: var(--text-muted); transition: color 0.3s ease; }
+        .scale-option.selected .scale-number { color: var(--accent-secondary); }
+        .scale-option .scale-emoji { display: block; font-size: 1.1rem; margin-top: 0.25rem; }
+        .form-submit { width: 100%; padding: 1rem; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); border: none; border-radius: 12px; color: white; font-family: 'Exo 2', sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px var(--glow-blue); }
+        .form-submit:disabled { background: linear-gradient(135deg, #4b5563, #374151); cursor: not-allowed; transform: none; box-shadow: none; }
+        .form-message { padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; text-align: center; display: none; }
+        .form-message.success { display: block; background: rgba(74, 222, 128, 0.15); border: 1px solid var(--marble-green); color: var(--marble-green); }
+        .form-message.error { display: block; background: rgba(230, 57, 70, 0.15); border: 1px solid var(--marble-red); color: var(--marble-red); }
+        @media (max-width: 500px) { .modal-content { border-radius: 16px; } .modal-header, .modal-body { padding: 1.25rem; } .checkbox-group { gap: 0.5rem; } .checkbox-item { padding: 0.5rem 0.75rem; } .scale-option { padding: 0.6rem 0.25rem; } .scale-option .scale-number { font-size: 1rem; } .scale-option .scale-emoji { font-size: 0.9rem; } }
+
         footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-dark); }
         .footer-logo { width: 150px; height: 150px; margin: 0 auto 1rem; }
         .footer-logo img { width: 100%; height: 100%; object-fit: contain; }
@@ -490,7 +534,7 @@
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
                     Bald verfügbar auf Android
                 </button>
-                <a href="#contact" class="coming-soon-text" style="text-decoration: underline;">Der Beta beitreten →</a>
+                <a href="#" class="coming-soon-text" style="text-decoration: underline;" onclick="openModal('betaModal'); return false;">Der Beta beitreten →</a>
                 <a href="#concept" class="cta-button secondary">Spiel entdecken ↓</a>
             </div>
         </div>
@@ -710,11 +754,11 @@
         <h2 class="section-title">Deine Meinung zählt</h2>
         <div class="feedback-box">
             <p>Hast du Marble5 ausprobiert?<br>Hilf uns, das Spiel zu verbessern, indem du deine Erfahrung teilst!</p>
-            <a href="#" id="playstore-review-link" class="cta-button primary" onclick="alert('Link verfügbar nach Beitritt zur Beta'); return false;">
+            <button class="cta-button primary disabled" style="opacity: 0.5; cursor: not-allowed;" onclick="openModal('feedbackModal')">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                Bewertung auf Google Play abgeben
-            </a>
-            <p class="coming-soon-text">Nur für Beta-Tester</p>
+                Feedback geben
+            </button>
+            <p class="coming-soon-text">Beta öffnet in <span id="betaDaysCount">--</span> Tagen</p>
         </div>
     </section>
 
@@ -722,36 +766,36 @@
         <h2 class="section-title">Kontaktiere uns</h2>
         <p class="section-subtitle">Eine Frage? Ein Problem? Wir sind hier, um zu helfen!</p>
         <div class="contact-grid">
-            <a href="mailto:contact@marble5.app?subject=%F0%9F%9A%80%20Der%20Beta%20beitreten" class="contact-card highlight">
+            <div class="contact-card highlight" onclick="openModal('betaModal')">
                 <span class="contact-card-icon">🚀</span>
                 <span class="contact-card-title">Der Beta beitreten</span>
                 <span class="contact-card-desc">Gehöre zu den Ersten!</span>
-            </a>
-            <a href="mailto:contact@marble5.app?subject=%F0%9F%90%9B%20Bug-Meldung" class="contact-card">
+            </div>
+            <div class="contact-card" onclick="openModal('bugModal')">
                 <span class="contact-card-icon">🐛</span>
                 <span class="contact-card-title">Bug melden</span>
                 <span class="contact-card-desc">Etwas funktioniert nicht?</span>
-            </a>
-            <a href="mailto:contact@marble5.app?subject=%F0%9F%94%A7%20Installationsproblem" class="contact-card">
+            </div>
+            <div class="contact-card" onclick="openModal('installModal')">
                 <span class="contact-card-icon">🔧</span>
                 <span class="contact-card-title">Installationsproblem</span>
                 <span class="contact-card-desc">Spiel startet nicht?</span>
-            </a>
-            <a href="mailto:contact@marble5.app?subject=%E2%9D%93%20Frage%20zum%20Spiel" class="contact-card">
+            </div>
+            <div class="contact-card" onclick="openModal('questionModal')">
                 <span class="contact-card-icon">❓</span>
                 <span class="contact-card-title">Frage zum Spiel</span>
                 <span class="contact-card-desc">Brauchst du Hilfe oder Infos?</span>
-            </a>
-            <a href="mailto:contact@marble5.app?subject=%F0%9F%92%A1%20Feedback%20%2F%20Vorschlag" class="contact-card">
+            </div>
+            <div class="contact-card" onclick="openModal('feedbackModal')">
                 <span class="contact-card-icon">💡</span>
                 <span class="contact-card-title">Feedback / Vorschlag</span>
                 <span class="contact-card-desc">Hast du eine Idee?</span>
-            </a>
-            <a href="mailto:contact@marble5.app?subject=%F0%9F%93%A9%20Andere%20Anfrage" class="contact-card">
+            </div>
+            <div class="contact-card" onclick="openModal('otherModal')">
                 <span class="contact-card-icon">📩</span>
                 <span class="contact-card-title">Sonstiges</span>
                 <span class="contact-card-desc">Erzähl uns dein Leben!</span>
-            </a>
+            </div>
         </div>
     </section>
 
@@ -786,6 +830,295 @@
         <a href="../en/index.html" class="lang-flag" title="English" onclick="localStorage.setItem('marble5-lang', 'en')">EN</a>
         <a href="../es/index.html" class="lang-flag" title="Español" onclick="localStorage.setItem('marble5-lang', 'es')">ES</a>
         <a href="#" class="lang-flag active" title="Deutsch" onclick="localStorage.setItem('marble5-lang', 'de'); return false;">DE</a>
+    </div>
+
+    <!-- Modal: Beta Registration -->
+    <div class="modal-overlay" id="betaModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Der Beta beitreten</h3>
+                <button class="modal-close" onclick="closeModal('betaModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="betaFormMessage" class="form-message"></div>
+                <form id="betaForm" onsubmit="submitBetaForm(event)">
+                    <div class="form-group">
+                        <label>Vorname <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="prenom" placeholder="Dein Vorname" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-Mail <span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="deine@email.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dein Android-Gerät <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="appareil" placeholder="z.B. Samsung Galaxy S23, Pixel 8..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Android-Version (falls bekannt)</label>
+                        <input type="text" class="form-input" name="version_android" placeholder="z.B. Android 14, Android 13...">
+                    </div>
+                    <div class="form-group">
+                        <label>Wie hast du von Marble5 erfahren? <span class="required">*</span></label>
+                        <select class="form-select" name="source" required>
+                            <option value="">Auswählen...</option>
+                            <option value="Mundpropaganda">Mundpropaganda</option>
+                            <option value="Soziale Netzwerke">Soziale Netzwerke</option>
+                            <option value="Google/Suche">Google/Suche</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ich spiele normalerweise auf...</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item" onclick="this.classList.toggle('checked')">
+                                <input type="checkbox" name="plateformes" value="Smartphone">
+                                <span>Smartphone</span>
+                            </label>
+                            <label class="checkbox-item" onclick="this.classList.toggle('checked')">
+                                <input type="checkbox" name="plateformes" value="Tablet">
+                                <span>Tablet</span>
+                            </label>
+                            <label class="checkbox-item" onclick="this.classList.toggle('checked')">
+                                <input type="checkbox" name="plateformes" value="PC">
+                                <span>PC</span>
+                            </label>
+                            <label class="checkbox-item" onclick="this.classList.toggle('checked')">
+                                <input type="checkbox" name="plateformes" value="Konsole">
+                                <span>Konsole</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Dein Spielerprofil</label>
+                        <div class="profile-scale">
+                            <div class="scale-labels">
+                                <span>Gelegentlich</span>
+                                <span>Hardcore</span>
+                            </div>
+                            <div class="scale-options">
+                                <label class="scale-option" onclick="selectScale(this, 'profil_joueur')">
+                                    <input type="radio" name="profil_joueur" value="1">
+                                    <span class="scale-number">1</span>
+                                    <span class="scale-emoji">🌱</span>
+                                </label>
+                                <label class="scale-option" onclick="selectScale(this, 'profil_joueur')">
+                                    <input type="radio" name="profil_joueur" value="2">
+                                    <span class="scale-number">2</span>
+                                    <span class="scale-emoji">🎮</span>
+                                </label>
+                                <label class="scale-option selected" onclick="selectScale(this, 'profil_joueur')">
+                                    <input type="radio" name="profil_joueur" value="3" checked>
+                                    <span class="scale-number">3</span>
+                                    <span class="scale-emoji">⭐</span>
+                                </label>
+                                <label class="scale-option" onclick="selectScale(this, 'profil_joueur')">
+                                    <input type="radio" name="profil_joueur" value="4">
+                                    <span class="scale-number">4</span>
+                                    <span class="scale-emoji">🔥</span>
+                                </label>
+                                <label class="scale-option" onclick="selectScale(this, 'profil_joueur')">
+                                    <input type="radio" name="profil_joueur" value="5">
+                                    <span class="scale-number">5</span>
+                                    <span class="scale-emoji">🏆</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Möchtest du uns noch etwas sagen?</label>
+                        <textarea class="form-textarea" name="texte_libre" placeholder="Deine Erwartungen, Fragen..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Anmeldung absenden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Bug Report -->
+    <div class="modal-overlay" id="bugModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Bug melden</h3>
+                <button class="modal-close" onclick="closeModal('bugModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="bugFormMessage" class="form-message"></div>
+                <form id="bugForm" onsubmit="submitGenericForm(event, 'bug_report', 'bugFormMessage')">
+                    <div class="form-group">
+                        <label>Deine E-Mail <span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="deine@email.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dein Gerät <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="appareil" placeholder="z.B. Samsung Galaxy S23, Pixel 8..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Android-Version (falls bekannt)</label>
+                        <input type="text" class="form-input" name="version_android" placeholder="z.B. Android 14">
+                    </div>
+                    <div class="form-group">
+                        <label>Wann trat der Bug auf? <span class="required">*</span></label>
+                        <select class="form-select" name="moment_bug" required>
+                            <option value="">Auswählen...</option>
+                            <option value="Beim Start">Beim Starten der App</option>
+                            <option value="In den Menüs">In den Menüs</option>
+                            <option value="Während des Spiels">Während des Spiels</option>
+                            <option value="Beim Levelwechsel">Beim Levelwechsel</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Beschreibe den Bug <span class="required">*</span></label>
+                        <textarea class="form-textarea" name="description" placeholder="Was ist passiert? Was hast du erwartet?" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Bug melden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Installation Problem -->
+    <div class="modal-overlay" id="installModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Installationsproblem</h3>
+                <button class="modal-close" onclick="closeModal('installModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="installFormMessage" class="form-message"></div>
+                <form id="installForm" onsubmit="submitGenericForm(event, 'probleme_installation', 'installFormMessage')">
+                    <div class="form-group">
+                        <label>Deine E-Mail <span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="deine@email.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Dein Gerät <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="appareil" placeholder="z.B. Samsung Galaxy S23, Pixel 8..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>Android-Version (falls bekannt)</label>
+                        <input type="text" class="form-input" name="version_android" placeholder="z.B. Android 14">
+                    </div>
+                    <div class="form-group">
+                        <label>Art des Problems <span class="required">*</span></label>
+                        <select class="form-select" name="type_probleme" required>
+                            <option value="">Auswählen...</option>
+                            <option value="Download unmöglich">Kann nicht herunterladen</option>
+                            <option value="Installation fehlgeschlagen">Installation fehlgeschlagen</option>
+                            <option value="App startet nicht">App startet nicht</option>
+                            <option value="Absturz beim Start">Absturz beim Starten</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Beschreibung / Fehlermeldung</label>
+                        <textarea class="form-textarea" name="description" placeholder="Kopiere hier die Fehlermeldung, falls vorhanden..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Problem melden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Question -->
+    <div class="modal-overlay" id="questionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Eine Frage?</h3>
+                <button class="modal-close" onclick="closeModal('questionModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="questionFormMessage" class="form-message"></div>
+                <form id="questionForm" onsubmit="submitGenericForm(event, 'question', 'questionFormMessage')">
+                    <div class="form-group">
+                        <label>Deine E-Mail <span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="deine@email.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Thema <span class="required">*</span></label>
+                        <select class="form-select" name="sujet" required>
+                            <option value="">Auswählen...</option>
+                            <option value="Spielregeln">Spielregeln</option>
+                            <option value="Wie man teilnimmt">Wie man an der Beta teilnimmt</option>
+                            <option value="Konto/Daten">Konto / Meine Daten</option>
+                            <option value="Erscheinungsdatum">Erscheinungsdatum</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Deine Frage <span class="required">*</span></label>
+                        <textarea class="form-textarea" name="description" placeholder="Stelle hier deine Frage..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Meine Frage senden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Feedback -->
+    <div class="modal-overlay" id="feedbackModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Feedback geben</h3>
+                <button class="modal-close" onclick="closeModal('feedbackModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="feedbackFormMessage" class="form-message"></div>
+                <form id="feedbackForm" onsubmit="submitGenericForm(event, 'feedback', 'feedbackFormMessage')">
+                    <div class="form-group">
+                        <label>Deine E-Mail (optional)</label>
+                        <input type="email" class="form-input" name="email" placeholder="deine@email.de">
+                    </div>
+                    <div class="form-group">
+                        <label>Art des Feedbacks <span class="required">*</span></label>
+                        <select class="form-select" name="type_feedback" required>
+                            <option value="">Auswählen...</option>
+                            <option value="Ich liebe es!">Ich liebe das Spiel!</option>
+                            <option value="Verbesserungsidee">Verbesserungsidee</option>
+                            <option value="Zu schwierig">Zu schwierig</option>
+                            <option value="Zu leicht">Zu leicht</option>
+                            <option value="Design/Grafik">Design / Grafik</option>
+                            <option value="Sound/Musik">Sound / Musik</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Deine Nachricht <span class="required">*</span></label>
+                        <textarea class="form-textarea" name="description" placeholder="Teile uns mit, was du denkst..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Feedback senden</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Other -->
+    <div class="modal-overlay" id="otherModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Kontaktiere uns</h3>
+                <button class="modal-close" onclick="closeModal('otherModal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="otherFormMessage" class="form-message"></div>
+                <form id="otherForm" onsubmit="submitGenericForm(event, 'autre', 'otherFormMessage')">
+                    <div class="form-group">
+                        <label>Deine E-Mail <span class="required">*</span></label>
+                        <input type="email" class="form-input" name="email" placeholder="deine@email.de" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Betreff <span class="required">*</span></label>
+                        <input type="text" class="form-input" name="sujet" placeholder="Worum geht es?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Deine Nachricht <span class="required">*</span></label>
+                        <textarea class="form-textarea" name="description" placeholder="Schreib uns deine Nachricht..." required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Nachricht senden</button>
+                </form>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -878,6 +1211,153 @@
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        // Update beta days count in feedback section
+        function updateBetaDays() {
+            const now = new Date().getTime();
+            const distance = betaDate - now;
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const betaDaysEl = document.getElementById('betaDaysCount');
+                if (betaDaysEl) betaDaysEl.textContent = days;
+            }
+        }
+        updateBetaDays();
+
+        // Modal Functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Scale selector
+        function selectScale(element, name) {
+            document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+                input.closest('.scale-option').classList.remove('selected');
+            });
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+        }
+
+        // Google Apps Script URL
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/VOTRE_SCRIPT_ID/exec';
+
+        // Beta Form Submit
+        async function submitBetaForm(event) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('.form-submit');
+            const messageDiv = document.getElementById('betaFormMessage');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Wird gesendet...';
+
+            const plateformes = Array.from(form.querySelectorAll('input[name="plateformes"]:checked'))
+                .map(cb => cb.value).join(', ');
+
+            const profilJoueur = form.querySelector('input[name="profil_joueur"]:checked');
+
+            const data = {
+                type: 'inscription_beta',
+                date: new Date().toLocaleString('de-DE'),
+                prenom: form.prenom.value,
+                email: form.email.value,
+                appareil: form.appareil.value,
+                version_android: form.version_android.value || 'Nicht angegeben',
+                source: form.source.value,
+                plateformes: plateformes || 'Nicht angegeben',
+                profil_joueur: profilJoueur ? profilJoueur.value : '3',
+                texte_libre: form.texte_libre.value
+            };
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                messageDiv.className = 'form-message success';
+                messageDiv.textContent = 'Danke für deine Anmeldung! Wir werden dich kontaktieren, sobald die Beta öffnet.';
+                form.reset();
+                document.querySelectorAll('.checkbox-item').forEach(item => item.classList.remove('checked'));
+                document.querySelectorAll('.scale-option').forEach(opt => opt.classList.remove('selected'));
+                document.querySelector('input[name="profil_joueur"][value="3"]').closest('.scale-option').classList.add('selected');
+            } catch (error) {
+                messageDiv.className = 'form-message error';
+                messageDiv.textContent = 'Es gab ein Problem beim Senden. Bitte versuche es später erneut.';
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Anmeldung absenden';
+        }
+
+        // Generic Form Submit
+        async function submitGenericForm(event, formType, messageId) {
+            event.preventDefault();
+            const form = event.target;
+            const submitBtn = form.querySelector('.form-submit');
+            const messageDiv = document.getElementById(messageId);
+            const originalText = submitBtn.textContent;
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Wird gesendet...';
+
+            const formData = new FormData(form);
+            const data = {
+                type: formType,
+                date: new Date().toLocaleString('de-DE')
+            };
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            try {
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                messageDiv.className = 'form-message success';
+                messageDiv.textContent = 'Deine Nachricht wurde gesendet! Danke für deine Hilfe.';
+                form.reset();
+            } catch (error) {
+                messageDiv.className = 'form-message error';
+                messageDiv.textContent = 'Es gab ein Problem beim Senden. Bitte versuche es später erneut.';
+            }
+
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        }
     </script>
 </body>
 </html>
