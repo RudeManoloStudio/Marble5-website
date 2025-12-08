@@ -38,8 +38,9 @@
  * 9. Validez et c'est bon ! L'URL reste la même.
  */
 
-// ⚠️ REMPLACEZ PAR L'ID DE VOTRE GOOGLE SHEETS
-const SPREADSHEET_ID = 'VOTRE_SPREADSHEET_ID_ICI';
+// ⚠️ ID DU GOOGLE SHEETS MARBLE5
+// Lien : https://docs.google.com/spreadsheets/d/1FLyDSkBlgwXBi7YzeUe5RmYQUFfR4MoMeMc4OkFPGaE/edit
+const SPREADSHEET_ID = '1FLyDSkBlgwXBi7YzeUe5RmYQUFfR4MoMeMc4OkFPGaE';
 
 // Email pour les notifications (optionnel - laissez vide pour désactiver)
 const NOTIFICATION_EMAIL = 'marble5-team@googlegroups.com';
