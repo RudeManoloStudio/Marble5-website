@@ -4,21 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marble5 - Alinea 5. Conecta todo. Domina la cuadrícula.</title>
-    <meta name="description" content="Alinea 5 canicas. Forma quintas. ¡Únete a la beta privada de Marble5, el puzzle game adictivo!">
+    <meta name="description" content="¿El movimiento perfecto? Es el siguiente. Únete a la beta privada de Marble5, el puzzle donde cada jugada prepara la siguiente.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://marble5.app/es/">
-    <meta property="og:title" content="Marble5 - El puzzle game adictivo">
-    <meta property="og:description" content="Alinea 5 canicas. Forma quintas. ¡Únete a la beta privada!">
+    <meta property="og:title" content="Marble5 - ¿El movimiento perfecto? Es el siguiente.">
+    <meta property="og:description" content="El puzzle donde cada jugada prepara la siguiente. ¡Únete a la beta privada!">
     <meta property="og:image" content="https://marble5.app/og-preview.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://marble5.app/es/">
-    <meta name="twitter:title" content="Marble5 - El puzzle game adictivo">
-    <meta name="twitter:description" content="Alinea 5 canicas. Forma quintas. ¡Únete a la beta privada!">
+    <meta name="twitter:title" content="Marble5 - ¿El movimiento perfecto? Es el siguiente.">
+    <meta name="twitter:description" content="El puzzle donde cada jugada prepara la siguiente. ¡Únete a la beta privada!">
     <meta name="twitter:image" content="https://marble5.app/og-preview.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -44,6 +53,29 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Exo 2', sans-serif; background: var(--bg-deep); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
 
+        /* Header Sticky */
+        .sticky-header {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(10, 12, 20, 0.95); backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transform: translateY(-100%); transition: transform 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .sticky-header.visible { transform: translateY(0); }
+        .sticky-header .logo { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--accent-secondary); text-decoration: none; }
+        .sticky-nav { display: flex; gap: 1.5rem; align-items: center; }
+        .sticky-nav a { color: var(--text-secondary); text-decoration: none; font-size: 0.85rem; font-weight: 500; transition: color 0.3s ease; }
+        .sticky-nav a:hover { color: var(--accent-secondary); }
+        .sticky-nav .nav-cta { background: var(--accent-primary); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-weight: 600; }
+        .sticky-nav .nav-cta:hover { background: var(--accent-secondary); color: var(--bg-deep); }
+        @media (max-width: 768px) {
+            .sticky-header { padding: 0.5rem 1rem; }
+            .sticky-nav { gap: 0.75rem; }
+            .sticky-nav a { font-size: 0.75rem; }
+            .sticky-nav .nav-cta { padding: 0.4rem 0.75rem; }
+            .nav-hide-mobile { display: none; }
+        }
 
         .hero {
             min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
@@ -70,16 +102,16 @@
             background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 50%);
         }
 
-        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('../images/marbles/marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
-        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('../images/marbles/marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
-        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('../images/marbles/marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
-        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('../images/marbles/marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
-        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('../images/marbles/marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
-        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('../images/marbles/marble_orange.png'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
-        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('../images/marbles/marble_purple.png'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
-        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('../images/marbles/marble_green.png'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
-        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('../images/marbles/marble_blue.png'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
-        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('../images/marbles/marble_yellow.png'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
+        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('../images/marbles/marble_blue.webp'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
+        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('../images/marbles/marble_green.webp'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
+        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('../images/marbles/marble_yellow.webp'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
+        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('../images/marbles/marble_purple.webp'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
+        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('../images/marbles/marble_orange.webp'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
+        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('../images/marbles/marble_orange.webp'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
+        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('../images/marbles/marble_purple.webp'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
+        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('../images/marbles/marble_green.webp'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
+        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('../images/marbles/marble_blue.webp'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
+        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('../images/marbles/marble_yellow.webp'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
 
         @keyframes float-marble {
             0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -133,8 +165,9 @@
             animation: fade-up 1s ease-out 0.2s both;
             filter: drop-shadow(0 0 20px rgba(72, 149, 239, 0.6)) drop-shadow(0 0 40px rgba(34, 211, 238, 0.4));
         }
-        .tagline { font-size: clamp(1.1rem, 3vw, 1.4rem); color: var(--text-secondary); margin-bottom: 2.5rem; animation: fade-up 1s ease-out 0.4s both; }
-        .tagline strong { color: var(--accent-secondary); font-weight: 600; }
+        .tagline { font-size: clamp(1.1rem, 3vw, 1.4rem); color: var(--text-secondary); margin-bottom: 2.5rem; animation: fade-up 1s ease-out 0.4s both; line-height: 1.8; }
+        .tagline strong { color: var(--accent-secondary); font-weight: 600; font-size: clamp(1.2rem, 3.5vw, 1.5rem); }
+        .tagline-sub { color: var(--text-muted); font-size: clamp(1rem, 2.5vw, 1.2rem); }
         @keyframes fade-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes fade-down { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
         .cta-container { display: flex; flex-direction: column; gap: 1rem; align-items: center; animation: fade-up 1s ease-out 0.6s both; }
@@ -512,6 +545,17 @@
 </head>
 <body>
 
+    <!-- Header Sticky -->
+    <header class="sticky-header" id="stickyHeader">
+        <a href="#" class="logo">MARBLE5</a>
+        <nav class="sticky-nav">
+            <a href="#concept" class="nav-hide-mobile">El Juego</a>
+            <a href="#rules" class="nav-hide-mobile">Reglas</a>
+            <a href="#contact">Contacto</a>
+            <a href="#beta" class="nav-cta">Inscribirse</a>
+        </nav>
+    </header>
+
     <section class="hero">
         <div class="floating-marbles">
             <div class="marble marble-1"></div>
@@ -538,7 +582,7 @@
                 </div>
             </div>
 
-            <p class="tagline">Alinea 5 canicas. Forma quinas. <strong>Domina la cuadrícula.</strong></p>
+            <p class="tagline"><strong>Alinea. Anticipa. Encadena.</strong><br><span class="tagline-sub">¿El movimiento perfecto? Es el siguiente.</span></p>
 
             <div class="countdown-container">
                 <p class="countdown-label">La Beta Privada abre en</p>
@@ -554,7 +598,7 @@
                 <button class="cta-button primary" onclick="openModal('betaModal')">
                     🔔 Reservar mi lugar
                 </button>
-                <span class="coming-soon-text">100 plazas • Solo Android</span>
+                <span class="coming-soon-text"><span id="places-counter">⏳ Cargando...</span> • Solo Android</span>
                 <a href="#concept" class="cta-button secondary">Descubrir el juego ↓</a>
             </div>
         </div>
@@ -587,15 +631,15 @@
         <p class="section-subtitle">3 mundos, 30 niveles, dificultad creciente</p>
         <div class="gallery-container">
             <div class="gallery-item">
-                <img src="../images/screenshots/screenshot_foret.png" alt="Niveles Bosque">
+                <img src="../images/screenshots/screenshot_foret.webp" alt="Niveles Bosque">
                 <span class="gallery-label">🌲 Bosque · Niveles 1-10</span>
             </div>
             <div class="gallery-item">
-                <img src="../images/screenshots/screenshot_ruines.png" alt="Niveles Ruinas">
+                <img src="../images/screenshots/screenshot_ruines.webp" alt="Niveles Ruinas">
                 <span class="gallery-label">🏛️ Ruinas · Niveles 11-20</span>
             </div>
             <div class="gallery-item">
-                <img src="../images/screenshots/screenshot_espace.png" alt="Niveles Espacio">
+                <img src="../images/screenshots/screenshot_espace.webp" alt="Niveles Espacio">
                 <span class="gallery-label">🌌 Espacio · Niveles 21-30</span>
             </div>
         </div>
@@ -765,7 +809,7 @@
                         <span class="stat-label">Gratis</span>
                     </div>
                 </div>
-                <p class="beta-note">⚠️ <strong>Recordatorio:</strong> Los visuales y sonidos no son definitivos. ¡Estás probando el gameplay, no la versión final!</p>
+                <p class="beta-note">🔬 <strong>Acceso anticipado</strong> — ¡Tu opinión da forma al juego!</p>
             </div>
         </div>
     </section>
@@ -986,6 +1030,29 @@
 
         // MODAL & FORM HANDLING
         const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxGxSXKYtkzycAgAwQH7z680L3pVBbNcvajHaiRy94wWsO5dfm0eVBTHyFSnqIDzifK/exec';
+
+        // CONTADOR DE PLAZAS
+        async function loadPlacesCounter() {
+            const counterEl = document.getElementById('places-counter');
+            if (!counterEl) return;
+            try {
+                const response = await fetch(GOOGLE_SCRIPT_URL);
+                const data = await response.json();
+                if (data.restantes !== undefined) {
+                    if (data.restantes > 0) {
+                        counterEl.innerHTML = `🔥 ¡Solo quedan <strong>${data.restantes}</strong> plazas!`;
+                    } else {
+                        counterEl.innerHTML = '❌ Completo';
+                    }
+                } else {
+                    counterEl.textContent = '100 plazas';
+                }
+            } catch (error) {
+                counterEl.textContent = '100 plazas';
+            }
+        }
+        document.addEventListener('DOMContentLoaded', loadPlacesCounter);
+
         function openModal(modalId) { document.getElementById(modalId).classList.add('active'); document.body.style.overflow = 'hidden'; }
         function closeModal(modalId) { document.getElementById(modalId).classList.remove('active'); document.body.style.overflow = ''; }
         document.querySelectorAll('.modal-overlay').forEach(modal => { modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(modal.id); }); });
@@ -1016,6 +1083,21 @@
         }
 
         document.querySelectorAll('.contact-card').forEach(card => { card.addEventListener('click', (e) => { e.preventDefault(); const href = card.getAttribute('href'); if (href.includes('Bug')) openModal('bugModal'); else if (href.includes('Instalación') || href.includes('instalaci')) openModal('installModal'); else if (href.includes('Pregunta')) openModal('questionModal'); else if (href.includes('Feedback')) openModal('feedbackModal'); else if (href.includes('Otro') || href.includes('Otra')) openModal('otherModal'); else if (href.includes('Beta') || href.includes('beta')) openModal('betaModal'); }); });
+
+        // Sticky Header
+        const stickyHeader = document.getElementById('stickyHeader');
+        let lastScroll = 0;
+        const heroHeight = document.querySelector('.hero').offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll > heroHeight * 0.7) {
+                stickyHeader.classList.add('visible');
+            } else {
+                stickyHeader.classList.remove('visible');
+            }
+            lastScroll = currentScroll;
+        });
     </script>
 </body>
 </html>

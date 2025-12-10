@@ -45,6 +45,34 @@ const SPREADSHEET_ID = '1FLyDSkBlgwXBi7YzeUe5RmYQUFfR4MoMeMc4OkFPGaE';
 // Email pour les notifications (optionnel - laissez vide pour désactiver)
 const NOTIFICATION_EMAIL = 'marble5-team@googlegroups.com';
 
+// Nombre total de places disponibles pour la bêta
+const TOTAL_PLACES = 100;
+
+// Fonction qui reçoit les requêtes GET (compteur de places)
+function doGet(e) {
+  try {
+    const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+    const sheet = ss.getSheetByName('Inscriptions Bêta');
+
+    // Compte les lignes (moins l'en-tête)
+    const inscrits = Math.max(0, sheet.getLastRow() - 1);
+    const restantes = Math.max(0, TOTAL_PLACES - inscrits);
+
+    return ContentService
+      .createTextOutput(JSON.stringify({
+        inscrits: inscrits,
+        restantes: restantes,
+        total: TOTAL_PLACES
+      }))
+      .setMimeType(ContentService.MimeType.JSON);
+
+  } catch (error) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ error: error.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  }
+}
+
 // Fonction qui reçoit les requêtes POST
 function doPost(e) {
   try {
