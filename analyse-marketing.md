@@ -14,23 +14,23 @@
 | Stade | Bêta privée (lancement 31/12/2025) |
 | Studio | One Last Move Studio |
 | Plateforme | Android uniquement |
-| **Score global** | **6.3/10** |
+| **Score global** | **7.0/10** _(était 6.3)_ |
 
 ---
 
 ## Notation par catégorie
 
-| Catégorie | Note | Tendance |
-|-----------|------|----------|
-| Identité de marque & Positionnement | 7/10 | 🟡 |
-| Proposition de valeur & Messaging | 6/10 | 🟠 |
-| Call-to-Action & Conversion | 8/10 | 🟢 |
-| UX / Design visuel | 8.5/10 | 🟢 |
-| Contenu & Copywriting | 6.5/10 | 🟡 |
-| SEO & Optimisation technique | 5.5/10 | 🟠 |
-| Performance & Technique | 6/10 | 🟠 |
-| Stratégie d'acquisition | 4/10 | 🔴 |
-| Trust & Crédibilité | 5/10 | 🟠 |
+| Catégorie | Note | Évolution |
+|-----------|------|-----------|
+| Identité de marque & Positionnement | 7/10 | = |
+| Proposition de valeur & Messaging | 7/10 | +1 |
+| Call-to-Action & Conversion | 8.5/10 | +0.5 |
+| UX / Design visuel | 9/10 | +0.5 |
+| Contenu & Copywriting | 7/10 | +0.5 |
+| SEO & Optimisation technique | 6.5/10 | +1 |
+| Performance & Technique | 7.5/10 | +1.5 |
+| Stratégie d'acquisition | 4/10 | = |
+| Trust & Crédibilité | 6.5/10 | +1.5 |
 
 ---
 
