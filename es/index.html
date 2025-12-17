@@ -94,42 +94,6 @@
             );
             z-index: 0;
         }
-
-        .floating-marbles { position: absolute; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-        .marble {
-            position: absolute; border-radius: 50%;
-            background-size: cover; background-position: center;
-            animation: float-marble 15s ease-in-out infinite;
-            box-shadow: 0 0 30px currentColor;
-        }
-        .marble::after {
-            content: ''; position: absolute; inset: 0; border-radius: 50%;
-            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4) 0%, transparent 50%);
-        }
-
-        .marble-1 { width: 75px; height: 75px; top: 8%; left: 4%; background-image: url('../images/marbles/marble_blue.webp'); color: rgba(72, 149, 239, 0.6); animation-delay: 0s; }
-        .marble-2 { width: 55px; height: 55px; top: 55%; left: 6%; background-image: url('../images/marbles/marble_green.webp'); color: rgba(74, 222, 128, 0.6); animation-delay: -3s; }
-        .marble-3 { width: 65px; height: 65px; top: 28%; left: 8%; background-image: url('../images/marbles/marble_yellow.webp'); color: rgba(250, 204, 21, 0.6); animation-delay: -6s; }
-        .marble-4 { width: 50px; height: 50px; top: 78%; left: 3%; background-image: url('../images/marbles/marble_purple.webp'); color: rgba(168, 85, 247, 0.6); animation-delay: -9s; }
-        .marble-5 { width: 60px; height: 60px; top: 42%; left: 5%; background-image: url('../images/marbles/marble_orange.webp'); color: rgba(251, 146, 60, 0.6); animation-delay: -12s; }
-        .marble-6 { width: 70px; height: 70px; top: 12%; right: 5%; background-image: url('../images/marbles/marble_orange.webp'); color: rgba(251, 146, 60, 0.6); animation-delay: -2s; }
-        .marble-7 { width: 50px; height: 50px; top: 52%; right: 4%; background-image: url('../images/marbles/marble_purple.webp'); color: rgba(168, 85, 247, 0.6); animation-delay: -5s; }
-        .marble-8 { width: 60px; height: 60px; top: 32%; right: 8%; background-image: url('../images/marbles/marble_green.webp'); color: rgba(74, 222, 128, 0.6); animation-delay: -8s; }
-        .marble-9 { width: 45px; height: 45px; top: 75%; right: 6%; background-image: url('../images/marbles/marble_blue.webp'); color: rgba(72, 149, 239, 0.6); animation-delay: -11s; }
-        .marble-10 { width: 55px; height: 55px; top: 5%; right: 12%; background-image: url('../images/marbles/marble_yellow.webp'); color: rgba(250, 204, 21, 0.6); animation-delay: -14s; }
-
-        @keyframes float-marble {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            25% { transform: translateY(-20px) rotate(10deg); }
-            50% { transform: translateY(10px) rotate(-5deg); }
-            75% { transform: translateY(-15px) rotate(5deg); }
-        }
-
-        @media (max-width: 768px) {
-            .marble { opacity: 0.5; }
-            .marble-1, .marble-2, .marble-3, .marble-4, .marble-5 { left: -15px; }
-            .marble-6, .marble-7, .marble-8, .marble-9, .marble-10 { right: -15px; }
-        }
         .hero-content { position: relative; z-index: 1; max-width: 800px; padding-top: 3rem; }
         .badge-proto {
             display: inline-block; padding: 0.5rem 1.25rem; background: rgba(251, 146, 60, 0.15);
@@ -562,18 +526,6 @@
     </header>
 
     <section class="hero">
-        <div class="floating-marbles">
-            <div class="marble marble-1"></div>
-            <div class="marble marble-2"></div>
-            <div class="marble marble-3"></div>
-            <div class="marble marble-4"></div>
-            <div class="marble marble-5"></div>
-            <div class="marble marble-6"></div>
-            <div class="marble marble-7"></div>
-            <div class="marble marble-8"></div>
-            <div class="marble marble-9"></div>
-            <div class="marble marble-10"></div>
-        </div>
         <div class="hero-content">
             <div class="badge-proto">🚀 Beta privada</div>
 
