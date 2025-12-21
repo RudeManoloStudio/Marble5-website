@@ -584,11 +584,18 @@
 
         /* Language Switcher */
         .lang-switcher {
-            position: fixed; top: 0.75rem; right: 1.5rem; z-index: 1000;
+            position: fixed; top: 0.75rem; right: 1.5rem; z-index: 999;
             display: flex; gap: 0.5rem; padding: 0.5rem 0.75rem;
             background: rgba(0, 0, 0, 0.5); border-radius: 25px;
             border: 1px solid rgba(255,255,255,0.2);
+            transition: opacity 0.3s ease, visibility 0.3s ease;
         }
+        .lang-switcher.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .lang-switcher-inline {
+            display: flex; gap: 0.4rem; margin-left: 0.75rem; padding-left: 0.75rem;
+            border-left: 1px solid rgba(255,255,255,0.15);
+        }
+        .lang-switcher-inline .lang-flag { padding: 0.3rem 0.5rem; font-size: 0.7rem; }
         .lang-flag {
             padding: 0.4rem 0.6rem; border-radius: 6px; cursor: pointer;
             border: 2px solid transparent; transition: all 0.3s ease;
@@ -633,6 +640,12 @@
             <a href="#rules" class="nav-hide-mobile">Règles</a>
             <a href="#contact">Contact</a>
             <a href="#beta" class="nav-cta">S'inscrire</a>
+            <div class="lang-switcher-inline">
+                <a href="/" class="lang-flag active" onclick="localStorage.setItem('marble5-lang', 'fr')">FR</a>
+                <a href="/en/" class="lang-flag" onclick="localStorage.setItem('marble5-lang', 'en')">EN</a>
+                <a href="/es/" class="lang-flag" onclick="localStorage.setItem('marble5-lang', 'es')">ES</a>
+                <a href="/de/" class="lang-flag" onclick="localStorage.setItem('marble5-lang', 'de')">DE</a>
+            </div>
         </nav>
     </header>
 
@@ -900,28 +913,28 @@
         <div class="contact-grid">
             <div class="contact-card highlight" onclick="openModal('betaModal')">
                 <span class="contact-card-icon">🚀</span>
-                <span class="contact-card-title">Réserver ma place</span>
-                <span class="contact-card-desc">Faites partie des premiers !</span>
+                <span class="contact-card-title">Rejoindre la bêta</span>
+                <span class="contact-card-desc">Obtenez votre accès maintenant !</span>
             </div>
-            <div class="contact-card disabled" style="opacity: 0.5; cursor: not-allowed;">
+            <div class="contact-card" onclick="openModal('bugModal')">
                 <span class="contact-card-icon">🐛</span>
                 <span class="contact-card-title">Signaler un bug</span>
-                <span class="contact-card-desc" style="color: var(--marble-orange);">Bêta privée pas encore ouverte</span>
+                <span class="contact-card-desc">Un souci ? Dites-nous tout !</span>
             </div>
-            <div class="contact-card disabled" style="opacity: 0.5; cursor: not-allowed;">
+            <div class="contact-card" onclick="openModal('installModal')">
                 <span class="contact-card-icon">🔧</span>
                 <span class="contact-card-title">Problème d'installation</span>
-                <span class="contact-card-desc" style="color: var(--marble-orange);">Bêta privée pas encore ouverte</span>
+                <span class="contact-card-desc">On vous aide à installer</span>
             </div>
             <div class="contact-card" onclick="openModal('questionModal')">
                 <span class="contact-card-icon">❓</span>
                 <span class="contact-card-title">Question sur le jeu</span>
                 <span class="contact-card-desc">Besoin d'aide ou d'infos ?</span>
             </div>
-            <div class="contact-card disabled" style="opacity: 0.5; cursor: not-allowed;">
+            <div class="contact-card" onclick="openModal('feedbackModal')">
                 <span class="contact-card-icon">💡</span>
                 <span class="contact-card-title">Feedback / Suggestion</span>
-                <span class="contact-card-desc" style="color: var(--marble-orange);">Bêta privée pas encore ouverte</span>
+                <span class="contact-card-desc">Vos idées nous intéressent !</span>
             </div>
             <div class="contact-card" onclick="openModal('otherModal')">
                 <span class="contact-card-icon">📩</span>
@@ -1678,6 +1691,7 @@
 
         // Sticky Header - apparaît après avoir scrollé
         const stickyHeader = document.getElementById('stickyHeader');
+        const langSwitcher = document.querySelector('.lang-switcher');
         let lastScroll = 0;
         const heroHeight = document.querySelector('.hero').offsetHeight;
 
@@ -1687,8 +1701,10 @@
             // Afficher le header après avoir passé le hero
             if (currentScroll > heroHeight * 0.7) {
                 stickyHeader.classList.add('visible');
+                if (langSwitcher) langSwitcher.classList.add('hidden');
             } else {
                 stickyHeader.classList.remove('visible');
+                if (langSwitcher) langSwitcher.classList.remove('hidden');
             }
 
             lastScroll = currentScroll;
