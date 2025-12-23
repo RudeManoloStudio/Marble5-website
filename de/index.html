@@ -522,7 +522,7 @@
 
     <section class="hero">
         <div class="hero-content">
-            <div class="badge-proto">🚀 Private Beta</div>
+            <div class="badge-proto" style="background: rgba(74, 222, 128, 0.15); border-color: var(--marble-green); color: var(--marble-green);">📱 Beta offen</div>
 
             <h1>MARBLE5</h1>
 
@@ -537,20 +537,15 @@
             <p class="tagline"><strong>Aufreihen. Antizipieren. Verketten.</strong><br><span class="tagline-sub">Der perfekte Zug? Der nächste.</span></p>
 
             <div class="countdown-container">
-                <p class="countdown-label">Private Beta öffnet in</p>
-                <div class="countdown" id="countdown">
-                    <div class="countdown-item"><span class="countdown-value" id="days">--</span><span class="countdown-unit">Tage</span></div>
-                    <div class="countdown-item"><span class="countdown-value" id="hours">--</span><span class="countdown-unit">Std</span></div>
-                    <div class="countdown-item"><span class="countdown-value" id="minutes">--</span><span class="countdown-unit">Min</span></div>
-                    <div class="countdown-item"><span class="countdown-value" id="seconds">--</span><span class="countdown-unit">Sek</span></div>
-                </div>
+                <p class="countdown-label" style="color: var(--marble-green); font-weight: 600;">🎉 Die Beta ist jetzt offen!</p>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Verfügbar auf Android-Smartphones</p>
             </div>
 
             <div class="cta-container">
                 <button class="cta-button primary" onclick="openModal('betaModal')">
-                    🔔 Platz reservieren
+                    📱 Beta beitreten
                 </button>
-                <span class="coming-soon-text"><span id="places-counter">⏳ Laden...</span> • Nur Android</span>
+                <span class="coming-soon-text"><span id="places-counter">⏳ Laden...</span></span>
                 <a href="#concept" class="cta-button secondary">Spiel entdecken ↓</a>
             </div>
         </div>
@@ -711,16 +706,43 @@
     <section class="beta-section" id="beta">
         <div class="beta-container">
             <div class="beta-header">
-                <div class="beta-badge">🔒 EXKLUSIVER ZUGANG</div>
-                <h2 class="beta-title">Was ist die Private Beta?</h2>
-                <p class="beta-intro">Gehöre zu den <strong>ersten 100 Spielern</strong>, die Marble5 vor allen anderen entdecken.</p>
+                <div class="beta-badge" style="background: rgba(74, 222, 128, 0.15); border-color: var(--marble-green); color: var(--marble-green);">📱 BETA OFFEN</div>
+                <h2 class="beta-title">Tritt der Beta bei!</h2>
+                <p class="beta-intro">Gehöre zu den <strong>ersten 100 Spielern</strong>, die Marble5 auf ihrem Android-Smartphone entdecken.</p>
+            </div>
+
+            <!-- Mini Roadmap -->
+            <div class="roadmap" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2.5rem; padding: 1.5rem; background: var(--bg-card); border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);">
+                <div style="display: flex; flex-direction: column; align-items: center; padding: 0.75rem 1rem;">
+                    <span style="font-size: 1.5rem;">📱</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; color: var(--marble-green); margin-top: 0.25rem;">Smartphones</span>
+                    <span style="font-size: 0.65rem; color: var(--marble-green);">✓ Jetzt</span>
+                </div>
+                <span style="color: var(--text-muted); font-size: 1.2rem;">→</span>
+                <div style="display: flex; flex-direction: column; align-items: center; padding: 0.75rem 1rem;">
+                    <span style="font-size: 1.5rem;">📟</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-top: 0.25rem;">Tablets</span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted);">Demnächst</span>
+                </div>
+                <span style="color: var(--text-muted); font-size: 1.2rem;">→</span>
+                <div style="display: flex; flex-direction: column; align-items: center; padding: 0.75rem 1rem;">
+                    <span style="font-size: 1.5rem;">🍎</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-top: 0.25rem;">iPhone</span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted);">Später</span>
+                </div>
+                <span style="color: var(--text-muted); font-size: 1.2rem;">→</span>
+                <div style="display: flex; flex-direction: column; align-items: center; padding: 0.75rem 1rem;">
+                    <span style="font-size: 1.5rem;">📱</span>
+                    <span style="font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); margin-top: 0.25rem;">iPad</span>
+                    <span style="font-size: 0.65rem; color: var(--text-muted);">Später</span>
+                </div>
             </div>
 
             <div class="beta-grid">
                 <div class="beta-card">
                     <div class="beta-card-icon">📱</div>
-                    <h3>Verteilung über Google Play</h3>
-                    <p>Das Spiel wird über Google Play verteilt. <a href="#" onclick="openModal('betaModal'); return false;" style="color: var(--marble-orange); font-weight: 600;">Reserviere deinen Platz</a>, um deinen Einladungslink zu erhalten, sobald es losgeht!</p>
+                    <h3>Verfügbar auf Google Play</h3>
+                    <p>Das Spiel wird über Google Play verteilt. <a href="#" onclick="openModal('betaModal'); return false;" style="color: var(--marble-green); font-weight: 600;">Melde dich an</a>, um deinen Einladungslink zu erhalten!</p>
                 </div>
 
                 <div class="beta-card">
@@ -761,7 +783,7 @@
                         <span class="stat-label">Kostenlos</span>
                     </div>
                 </div>
-                <p class="beta-note">🔬 <strong>Vorab-Zugang</strong> — Dein Feedback formt das Spiel!</p>
+                <p class="beta-note" style="background: rgba(74, 222, 128, 0.1); border-color: rgba(74, 222, 128, 0.3);"><strong style="color: var(--marble-green);">📱 Android-Smartphones</strong> — Tablets und iOS kommen später!</p>
             </div>
         </div>
     </section>
@@ -770,11 +792,11 @@
         <h2 class="section-title">Deine Meinung zählt</h2>
         <div class="feedback-box">
             <p>Hast du Marble5 ausprobiert?<br>Hilf uns, das Spiel zu verbessern, indem du deine Erfahrung teilst!</p>
-            <button class="cta-button primary disabled" style="opacity: 0.5; cursor: not-allowed;" onclick="openModal('feedbackModal')">
+            <a href="https://play.google.com/store/apps/details?id=com.onelastmove.marble5" target="_blank" class="cta-button primary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-                Feedback geben
-            </button>
-            <p class="coming-soon-text">Private Beta öffnet in <span id="betaDaysCount">--</span> Tagen</p>
+                Bewertung auf Google Play
+            </a>
+            <p class="coming-soon-text" style="color: var(--marble-green);">Die Beta ist auf Android-Smartphones geöffnet!</p>
         </div>
     </section>
 
@@ -782,9 +804,9 @@
         <h2 class="section-title">Kontaktiere uns</h2>
         <p class="section-subtitle">Eine Frage? Ein Problem? Wir sind hier, um zu helfen!</p>
         <div class="contact-grid">
-            <div class="contact-card highlight" onclick="openModal('betaModal')">
+            <div class="contact-card" style="background: linear-gradient(135deg, rgba(74, 222, 128, 0.15), rgba(34, 211, 238, 0.08)); border-color: rgba(74, 222, 128, 0.4);" onclick="openModal('betaModal')">
                 <span class="contact-card-icon">🚀</span>
-                <span class="contact-card-title">Beta beitreten</span>
+                <span class="contact-card-title" style="color: var(--marble-green);">Beta beitreten</span>
                 <span class="contact-card-desc">Hol dir jetzt deinen Zugang!</span>
             </div>
             <div class="contact-card" onclick="openModal('bugModal')">
