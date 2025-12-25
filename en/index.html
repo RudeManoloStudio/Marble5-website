@@ -11,14 +11,14 @@
     <meta property="og:url" content="https://marble5.app/en/">
     <meta property="og:title" content="Marble5 - The perfect move? It's the next one.">
     <meta property="og:description" content="The puzzle where every move sets up the next. Join the private beta!">
-    <meta property="og:image" content="https://marble5.app/og-preview.jpg">
+    <meta property="og:image" content="https://marble5.app/feature_graphic_1024x500.jpg">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://marble5.app/en/">
     <meta name="twitter:title" content="Marble5 - The perfect move? It's the next one.">
     <meta name="twitter:description" content="The puzzle where every move sets up the next. Join the private beta!">
-    <meta name="twitter:image" content="https://marble5.app/og-preview.jpg">
+    <meta name="twitter:image" content="https://marble5.app/feature_graphic_1024x500.jpg">
 
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -400,6 +400,18 @@
         }
         .contact-card.highlight:hover { border-color: var(--marble-orange); box-shadow: 0 10px 30px rgba(251, 146, 60, 0.2); }
         .contact-card.highlight .contact-card-title { color: var(--marble-orange); }
+        .contact-card-link {
+            display: inline-block;
+            margin-top: 0.6rem;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.7rem;
+            background: rgba(251, 146, 60, 0.15);
+            color: var(--marble-orange);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .contact-card-link:hover { background: rgba(251, 146, 60, 0.25); }
         @media (max-width: 500px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
 
         /* Modal Form Styles */
@@ -912,11 +924,11 @@
         <h2 class="section-title">Your Opinion Matters</h2>
         <div class="feedback-box">
             <p>Have you tried Marble5?<br>Help us improve the game by sharing your experience!</p>
-            <a href="https://play.google.com/store/apps/details?id=com.onelastmove.marble5" target="_blank" class="cta-button primary">
+            <span class="cta-button primary disabled">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.5,12.92 20.16,13.19L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
                 Leave a review on Google Play
-            </a>
-            <p class="coming-soon-text" style="color: var(--marble-green);">Private Beta is open on Android smartphones!</p>
+            </span>
+            <p class="coming-soon-text">Coming soon</p>
         </div>
     </section>
 
@@ -932,7 +944,7 @@
             <div class="contact-card" onclick="openModal('bugModal')">
                 <span class="contact-card-icon">🐛</span>
                 <span class="contact-card-title">Report a Bug</span>
-                <span class="contact-card-desc">Found an issue? Tell us!</span>
+                <a href="../issues.html" class="contact-card-link" onclick="event.stopPropagation()">Known Issues</a>
             </div>
             <div class="contact-card" onclick="openModal('installModal')">
                 <span class="contact-card-icon">🔧</span>
@@ -976,6 +988,7 @@
         <div class="footer-studio">ONE LAST MOVE STUDIO</div>
         <div class="footer-links">
             <a href="#rules">Game Rules</a>
+            <a href="../issues.html">Known Issues</a>
             <a href="privacy.html">Privacy</a>
             <a href="#contact">Contact</a>
         </div>
