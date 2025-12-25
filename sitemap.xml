@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Page principale FR -->
+  <url>
+    <loc>https://marble5.app/</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marble5.app/"/>
+  </url>
+
+  <!-- Page principale EN -->
+  <url>
+    <loc>https://marble5.app/en/</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marble5.app/"/>
+  </url>
+
+  <!-- Page principale ES -->
+  <url>
+    <loc>https://marble5.app/es/</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marble5.app/"/>
+  </url>
+
+  <!-- Page principale DE -->
+  <url>
+    <loc>https://marble5.app/de/</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marble5.app/"/>
+  </url>
+
+  <!-- Politique de confidentialité FR -->
+  <url>
+    <loc>https://marble5.app/privacy.html</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/privacy.html"/>
+  </url>
+
+  <!-- Politique de confidentialité EN -->
+  <url>
+    <loc>https://marble5.app/en/privacy.html</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/privacy.html"/>
+  </url>
+
+  <!-- Politique de confidentialité ES -->
+  <url>
+    <loc>https://marble5.app/es/privacy.html</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/privacy.html"/>
+  </url>
+
+  <!-- Politique de confidentialité DE -->
+  <url>
+    <loc>https://marble5.app/de/privacy.html</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://marble5.app/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://marble5.app/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://marble5.app/es/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://marble5.app/de/privacy.html"/>
+  </url>
+
+  <!-- Known Issues (EN uniquement) -->
+  <url>
+    <loc>https://marble5.app/issues.html</loc>
+    <lastmod>2024-12-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>
