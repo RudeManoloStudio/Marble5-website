@@ -41,7 +41,12 @@
       "Bash(del \"d:\\Création sites\\marble5-website\\convert_to_webp.py\")",
       "Bash(del \"d:\\\\Création sites\\\\marble5-website\\\\ANALYSE_MARKETING.md\")",
       "Bash(del \"d:\\\\Création sites\\\\marble5-website\\\\analyse-marketing.md\")",
-      "Bash(del \"d:\\\\Création sites\\\\marble5-website\\\\.claude\\\\ANALYSE_SITE.md\")"
+      "Bash(del \"d:\\\\Création sites\\\\marble5-website\\\\.claude\\\\ANALYSE_SITE.md\")",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(git fetch:*)",
+      "Bash(git checkout:*)",
+      "Bash(timeout:*)"
     ],
     "deny": [],
     "ask": []

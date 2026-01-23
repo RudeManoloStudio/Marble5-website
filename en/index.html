@@ -503,7 +503,8 @@
         .checkbox-item:hover { border-color: rgba(72, 149, 239, 0.4); }
         .checkbox-item.checked {
             border-color: var(--accent-secondary);
-            background: rgba(34, 211, 238, 0.1);
+            background: rgba(34, 211, 238, 0.25);
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.3), inset 0 0 8px rgba(34, 211, 238, 0.15);
         }
         .checkbox-item input { display: none; }
         .checkbox-item span { font-size: 0.9rem; color: var(--text-secondary); }
@@ -526,7 +527,8 @@
         .scale-option:hover { border-color: rgba(72, 149, 239, 0.4); }
         .scale-option.selected {
             border-color: var(--accent-secondary);
-            background: rgba(34, 211, 238, 0.15);
+            background: rgba(34, 211, 238, 0.3);
+            box-shadow: 0 0 12px rgba(34, 211, 238, 0.4), inset 0 0 8px rgba(34, 211, 238, 0.2);
         }
         .scale-option input { display: none; }
         .scale-option .scale-number {
@@ -574,6 +576,11 @@
             border: 1px solid var(--marble-red);
             color: var(--marble-red);
         }
+        .modal-success-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg-card); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; border-radius: 20px; animation: successFadeIn 0.3s ease; }
+        .modal-success-overlay .success-icon { font-size: 4rem; margin-bottom: 1rem; animation: successPop 0.4s ease; }
+        .modal-success-overlay .success-text { font-size: 1.5rem; font-weight: 600; color: var(--marble-green); }
+        @keyframes successFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes successPop { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
         @media (max-width: 500px) {
             .modal-content { border-radius: 16px; }
             .modal-header, .modal-body { padding: 1.25rem; }
@@ -1065,12 +1072,14 @@
                         <label>Android Version</label>
                         <select name="version_android" class="form-select">
                             <option value="">I don't know</option>
+                            <option value="Android 9">Android 9</option>
                             <option value="Android 10">Android 10</option>
                             <option value="Android 11">Android 11</option>
                             <option value="Android 12">Android 12</option>
                             <option value="Android 13">Android 13</option>
                             <option value="Android 14">Android 14</option>
                             <option value="Android 15">Android 15</option>
+                            <option value="Android 16">Android 16</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -1140,12 +1149,14 @@
                         <label>Android Version</label>
                         <select name="version_android" class="form-select">
                             <option value="">I don't know</option>
+                            <option value="Android 9">Android 9</option>
                             <option value="Android 10">Android 10</option>
                             <option value="Android 11">Android 11</option>
                             <option value="Android 12">Android 12</option>
                             <option value="Android 13">Android 13</option>
                             <option value="Android 14">Android 14</option>
                             <option value="Android 15">Android 15</option>
+                            <option value="Android 16">Android 16</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -1192,12 +1203,14 @@
                         <label>Android Version</label>
                         <select name="version_android" class="form-select">
                             <option value="">I don't know</option>
+                            <option value="Android 9">Android 9</option>
                             <option value="Android 10">Android 10</option>
                             <option value="Android 11">Android 11</option>
                             <option value="Android 12">Android 12</option>
                             <option value="Android 13">Android 13</option>
                             <option value="Android 14">Android 14</option>
                             <option value="Android 15">Android 15</option>
+                            <option value="Android 16">Android 16</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -1454,8 +1467,22 @@
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
+            const modal = document.getElementById(modalId);
+            const overlay = modal.querySelector('.modal-success-overlay');
+            if (overlay) overlay.remove();
+            modal.classList.remove('active');
             document.body.style.overflow = '';
+        }
+
+        function showSuccessAndClose(modalId, text = 'Sent!') {
+            const modal = document.getElementById(modalId);
+            const content = modal.querySelector('.modal-content');
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-success-overlay';
+            overlay.innerHTML = `<span class="success-icon">✅</span><span class="success-text">${text}</span>`;
+            content.style.position = 'relative';
+            content.appendChild(overlay);
+            setTimeout(() => closeModal(modalId), 2000);
         }
 
         document.querySelectorAll('.modal-overlay').forEach(modal => {
@@ -1524,11 +1551,10 @@
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
-                messageDiv.className = 'form-message success';
-                messageDiv.textContent = '🎉 Thank you! Your application has been sent. We\'ll contact you soon!';
                 form.reset();
                 document.querySelectorAll('.checkbox-item').forEach(item => item.classList.remove('checked'));
                 document.querySelectorAll('.scale-option').forEach(opt => opt.classList.remove('selected'));
+                showSuccessAndClose('betaModal', 'Sent!');
             } catch (error) {
                 messageDiv.className = 'form-message error';
                 messageDiv.textContent = 'An error occurred. Please try again or contact us by email.';
@@ -1540,11 +1566,11 @@
         async function submitGenericForm(event, formType) {
             event.preventDefault();
             const formConfigs = {
-                bug: { formId: 'bugForm', btnId: 'bugSubmitBtn', msgId: 'bugFormMessage', type: 'bug_report', successMsg: '🐛 Thank you for your report! We\'ll investigate.', btnText: 'Send report' },
-                install: { formId: 'installForm', btnId: 'installSubmitBtn', msgId: 'installFormMessage', type: 'probleme_installation', successMsg: '🔧 Message received! We\'ll respond quickly.', btnText: 'Send' },
-                question: { formId: 'questionForm', btnId: 'questionSubmitBtn', msgId: 'questionFormMessage', type: 'question', successMsg: '❓ Question sent! We\'ll respond soon.', btnText: 'Send my question' },
-                feedback: { formId: 'feedbackForm', btnId: 'feedbackSubmitBtn', msgId: 'feedbackFormMessage', type: 'feedback', successMsg: '💡 Thank you for your feedback! We love hearing from you.', btnText: 'Send my feedback' },
-                other: { formId: 'otherForm', btnId: 'otherSubmitBtn', msgId: 'otherFormMessage', type: 'autre', successMsg: '📩 Message sent! We\'ll respond soon.', btnText: 'Send' }
+                bug: { formId: 'bugForm', btnId: 'bugSubmitBtn', msgId: 'bugFormMessage', modalId: 'bugModal', type: 'bug_report', successMsg: '🐛 Thank you for your report! We\'ll investigate.', btnText: 'Send report' },
+                install: { formId: 'installForm', btnId: 'installSubmitBtn', msgId: 'installFormMessage', modalId: 'installModal', type: 'probleme_installation', successMsg: '🔧 Message received! We\'ll respond quickly.', btnText: 'Send' },
+                question: { formId: 'questionForm', btnId: 'questionSubmitBtn', msgId: 'questionFormMessage', modalId: 'questionModal', type: 'question', successMsg: '❓ Question sent! We\'ll respond soon.', btnText: 'Send my question' },
+                feedback: { formId: 'feedbackForm', btnId: 'feedbackSubmitBtn', msgId: 'feedbackFormMessage', modalId: 'feedbackModal', type: 'feedback', successMsg: '💡 Thank you for your feedback! We love hearing from you.', btnText: 'Send my feedback' },
+                other: { formId: 'otherForm', btnId: 'otherSubmitBtn', msgId: 'otherFormMessage', modalId: 'otherModal', type: 'autre', successMsg: '📩 Message sent! We\'ll respond soon.', btnText: 'Send' }
             };
 
             const config = formConfigs[formType];
@@ -1563,9 +1589,8 @@
 
             try {
                 await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-                messageDiv.className = 'form-message success';
-                messageDiv.textContent = config.successMsg;
                 form.reset();
+                showSuccessAndClose(config.modalId, 'Sent!');
             } catch (error) {
                 messageDiv.className = 'form-message error';
                 messageDiv.textContent = 'An error occurred. Please try again or contact us by email.';

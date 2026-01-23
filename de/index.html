@@ -442,7 +442,7 @@
         .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
         .checkbox-item { display: flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
         .checkbox-item:hover { border-color: rgba(72, 149, 239, 0.4); }
-        .checkbox-item.checked { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
+        .checkbox-item.checked { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.25); box-shadow: 0 0 12px rgba(34, 211, 238, 0.3), inset 0 0 8px rgba(34, 211, 238, 0.15); }
         .checkbox-item input { display: none; }
         .checkbox-item span { font-size: 0.9rem; color: var(--text-secondary); }
         .checkbox-item.checked span { color: var(--text-primary); }
@@ -451,7 +451,7 @@
         .scale-options { display: flex; gap: 0.5rem; }
         .scale-option { flex: 1; padding: 0.75rem 0.5rem; background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; text-align: center; cursor: pointer; transition: all 0.3s ease; }
         .scale-option:hover { border-color: rgba(72, 149, 239, 0.4); }
-        .scale-option.selected { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.15); }
+        .scale-option.selected { border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.3); box-shadow: 0 0 12px rgba(34, 211, 238, 0.4), inset 0 0 8px rgba(34, 211, 238, 0.2); }
         .scale-option input { display: none; }
         .scale-option .scale-number { display: block; font-size: 1.2rem; font-weight: 700; color: var(--text-muted); transition: color 0.3s ease; }
         .scale-option.selected .scale-number { color: var(--accent-secondary); }
@@ -462,6 +462,11 @@
         .form-message { padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem; text-align: center; display: none; }
         .form-message.success { display: block; background: rgba(74, 222, 128, 0.15); border: 1px solid var(--marble-green); color: var(--marble-green); }
         .form-message.error { display: block; background: rgba(230, 57, 70, 0.15); border: 1px solid var(--marble-red); color: var(--marble-red); }
+        .modal-success-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--bg-card); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 100; border-radius: 20px; animation: successFadeIn 0.3s ease; }
+        .modal-success-overlay .success-icon { font-size: 4rem; margin-bottom: 1rem; animation: successPop 0.4s ease; }
+        .modal-success-overlay .success-text { font-size: 1.5rem; font-weight: 600; color: var(--marble-green); }
+        @keyframes successFadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes successPop { 0% { transform: scale(0); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
         @media (max-width: 500px) { .modal-content { border-radius: 16px; } .modal-header, .modal-body { padding: 1.25rem; } .checkbox-group { gap: 0.5rem; } .checkbox-item { padding: 0.5rem 0.75rem; } .scale-option { padding: 0.6rem 0.25rem; } .scale-option .scale-number { font-size: 1rem; } .scale-option .scale-emoji { font-size: 0.9rem; } }
 
         footer { text-align: center; padding: 3rem 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); background: var(--bg-dark); }
@@ -1318,8 +1323,22 @@
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
+            const modal = document.getElementById(modalId);
+            const overlay = modal.querySelector('.modal-success-overlay');
+            if (overlay) overlay.remove();
+            modal.classList.remove('active');
             document.body.style.overflow = '';
+        }
+
+        function showSuccessAndClose(modalId, text = 'Gesendet!') {
+            const modal = document.getElementById(modalId);
+            const content = modal.querySelector('.modal-content');
+            const overlay = document.createElement('div');
+            overlay.className = 'modal-success-overlay';
+            overlay.innerHTML = `<span class="success-icon">✅</span><span class="success-text">${text}</span>`;
+            content.style.position = 'relative';
+            content.appendChild(overlay);
+            setTimeout(() => closeModal(modalId), 2000);
         }
 
         // Close modal on overlay click
@@ -1412,12 +1431,11 @@
                     body: JSON.stringify(data)
                 });
 
-                messageDiv.className = 'form-message success';
-                messageDiv.textContent = 'Danke für deine Anmeldung! Wir werden dich kontaktieren, sobald die Beta öffnet.';
                 form.reset();
                 document.querySelectorAll('.checkbox-item').forEach(item => item.classList.remove('checked'));
                 document.querySelectorAll('.scale-option').forEach(opt => opt.classList.remove('selected'));
                 document.querySelector('input[name="profil_joueur"][value="3"]').closest('.scale-option').classList.add('selected');
+                showSuccessAndClose('betaModal', 'Gesendet!');
             } catch (error) {
                 messageDiv.className = 'form-message error';
                 messageDiv.textContent = 'Es gab ein Problem beim Senden. Bitte versuche es später erneut.';
@@ -1456,9 +1474,9 @@
                     body: JSON.stringify(data)
                 });
 
-                messageDiv.className = 'form-message success';
-                messageDiv.textContent = 'Deine Nachricht wurde gesendet! Danke für deine Hilfe.';
                 form.reset();
+                const modalId = messageId.replace('FormMessage', 'Modal');
+                showSuccessAndClose(modalId, 'Gesendet!');
             } catch (error) {
                 messageDiv.className = 'form-message error';
                 messageDiv.textContent = 'Es gab ein Problem beim Senden. Bitte versuche es später erneut.';

@@ -41,7 +41,7 @@
 Le nom fait référence à cette sensation universelle du joueur : "Allez, encore un coup et j'arrête..." (et 3h plus tard, on y est encore).
 
 ### Contact
-- **Email** : contact@marble5.app
+- **Email** : olms.marble5@gmail.com
 - **Google Groups** : marble5-team@googlegroups.com
 
 ---
