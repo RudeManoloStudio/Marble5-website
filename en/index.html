@@ -161,28 +161,6 @@
         .cta-button.secondary:hover { color: var(--text-primary); border-color: var(--accent-secondary); background: rgba(34, 211, 238, 0.1); }
         .coming-soon-text { font-size: 0.85rem; color: var(--marble-orange); margin-top: 0.5rem; }
 
-        /* Countdown Timer */
-        .countdown-container { margin: 1.5rem 0; animation: fade-up 1s ease-out 0.5s both; }
-        .countdown-label { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; }
-        .countdown { display: flex; justify-content: center; gap: 0.75rem; }
-        .countdown-item {
-            display: flex; flex-direction: column; align-items: center;
-            background: var(--bg-card); border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px; padding: 0.75rem 1rem; min-width: 70px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        .countdown-value {
-            font-family: 'Quicksand', sans-serif; font-size: 1.8rem; font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
-        .countdown-unit { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-        .countdown-ended { color: var(--marble-green); font-weight: 600; font-size: 1.1rem; }
-        @media (max-width: 480px) {
-            .countdown-item { padding: 0.5rem 0.6rem; min-width: 55px; }
-            .countdown-value { font-size: 1.4rem; }
-        }
-
         .scroll-hint { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); animation: bounce 2s ease-in-out infinite; color: var(--text-muted); }
         @keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(10px); } }
 
@@ -710,8 +688,8 @@
 
             <p class="tagline"><strong>Align. Anticipate. Chain.</strong><br><span class="tagline-sub">The perfect move? It's the next one.</span></p>
 
-            <div class="countdown-container">
-                <p class="countdown-label" style="color: var(--marble-green); font-weight: 600;">🎉 Private Beta is now open!</p>
+            <div class="beta-announcement" style="margin: 1.5rem 0; animation: fade-up 1s ease-out 0.5s both;">
+                <p style="color: var(--marble-green); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em;">🎉 Private Beta is now open!</p>
                 <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">Available on Android smartphones</p>
             </div>
 
@@ -1397,36 +1375,6 @@
 
         prevBtn.addEventListener('click', prevSlide);
         nextBtn.addEventListener('click', nextSlide);
-
-        // Countdown Timer - December 31, 2025 at midnight (Paris time)
-        const betaDate = new Date('2025-12-31T00:00:00+01:00').getTime();
-
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = betaDate - now;
-
-            if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<p class="countdown-ended">The Private Beta is now open!</p>';
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-            // Update days counter in feedback section
-            const betaDaysEl = document.getElementById('betaDaysCount');
-            if (betaDaysEl) betaDaysEl.textContent = days;
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
 
         // =============================================
         // MODAL & FORM HANDLING
